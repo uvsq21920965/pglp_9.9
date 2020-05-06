@@ -48,6 +48,7 @@ public class Rectangle extends Shape {
 
   /**
    * methode pour afficher les caractéristiques du rectangle.
+   * @return les caractéristiques
    */
   @Override
   public String Affiche() {

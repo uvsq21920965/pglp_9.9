@@ -19,15 +19,16 @@ public class Carre extends Rectangle {
   }
  
   /**
-   * methode pour acceder la largeur.
-   * @return largeur.
+   * methode pour acceder au coté.
+   * @return lle coté.
    */
   public double getSide() {
     return side;
   }
 
   /**
-   * methode pour afficher les caractéristiques du rectangle.
+   * methode pour afficher les caractéristiques du Carre.
+   * @return les caractéristiques.
    */
   @Override
   public String Affiche() {

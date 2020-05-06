@@ -55,6 +55,7 @@ public class Triangle extends Shape{
 
   /**
    * methode pour afficher les caractéristiques du triangle.
+   * @return les caractéristiques.
    */
   @Override
   public String Affiche() {

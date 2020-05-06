@@ -42,6 +42,7 @@ public class Cercle extends Shape{
 
   /**
    * methode pour afficher les caractéristiques du cercle.
+   * @return les caractéristiques
    */
   @Override
   public String Affiche() {
