@@ -10,15 +10,15 @@ import drawing.Triangle;
 public class TriangleTest {
 
 	 Point point = new Point(0,0);
-	 Triangle  t1= new Triangle("t1",point,4,5);
+	 Triangle  t1= new Triangle("t1",point,4,5,1);
 	 Point p1 = new Point(5,8);
-	 Triangle  t4 = new Triangle("t4",p1,2.5,5);
+	 Triangle  t4 = new Triangle("t4",p1,2.5,5,4);
 
 	  @Test
 	  public void movetest() {
 	    t1.move(2, 3);
-	    Double x = t1.getPointRef().getX();
-	    Double y = t1.getPointRef().getY();
+	    Double x = t1.getTop().getX();
+	    Double y = t1.getTop().getY();
 	    assertTrue(x.equals(2.0));
 	    assertTrue(y.equals(3.0));
 	   }
@@ -33,14 +33,15 @@ public class TriangleTest {
 	  @Test
 	  public void getPointRefTest( ) {
 	    Point p = new Point(5,8);
-	    Triangle  t3= new Triangle("t3",p,8.3,5);
-	    Double x = t3.getPointRef().getX();
-	    Double y = t3.getPointRef().getY();
+	    Triangle  t3= new Triangle("t3",p,8.3,5,3);
+	    Double x = t3.getTop().getX();
+	    Double y = t3.getTop().getY();
 	    assertTrue(x.equals(5.0));
 	    assertTrue(y.equals(8.0));
-	    t3.setPointRef(3.5, 7);
-	    x = t3.getPointRef().getX();
-	    y = t3.getPointRef().getY();
+	    p = new Point(3.5,7);
+	    t3.setTop(p);
+	    x = t3.getTop().getX();
+	    y = t3.getTop().getY();
 	    assertTrue(x.equals(3.5));
 	    assertTrue(y.equals(7.0));
 	   }

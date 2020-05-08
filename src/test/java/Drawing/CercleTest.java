@@ -9,13 +9,13 @@ import drawing.Point;
 public class CercleTest {
 
 	  Point point = new Point(0,0);
-	  Cercle c1= new Cercle("c1",point,4.0);
+	  Cercle c1= new Cercle("c1",point,4.0,1);
 
 	  @Test
 	  public void movetest() {
 	    c1.move(2, 3);
-	    Double x = c1.getPointRef().getX();
-	    Double y = c1.getPointRef().getY();
+	    Double x = c1.getCentre().getX();
+	    Double y = c1.getCentre().getY();
 	    assertTrue(x.equals(2.0));
 	    assertTrue(y.equals(3.0));
 	   }
@@ -29,14 +29,15 @@ public class CercleTest {
 	  @Test
 	  public void getPointRefTest( ) {
 	    Point p = new Point(5,8);
-	    Cercle  c3= new Cercle("c3",p,8.3);
-	    Double x = c3.getPointRef().getX();
-	    Double y = c3.getPointRef().getY();
+	    Cercle  c3= new Cercle("c3",p,8.3,2);
+	    Double x = c3.getCentre().getX();
+	    Double y = c3.getCentre().getY();
 	    assertTrue(x.equals(5.0));
 	    assertTrue(y.equals(8.0));
-	    c3.setPointRef(3.5, 7);
-	    x = c3.getPointRef().getX();
-	    y = c3.getPointRef().getY();
+	    p = new Point(3.5,7);
+	    c3.setCentre(p);
+	    x = c3.getCentre().getX();
+	    y = c3.getCentre().getY();
 	    assertTrue(x.equals(3.5));
 	    assertTrue(y.equals(7.0));
 	   }
@@ -48,7 +49,7 @@ public class CercleTest {
 	  @Test
 	  public void getcentreTest( ) {
 		Point p1 = new Point(4,7);
-		Cercle  c4= new Cercle("c4",p1,6);
+		Cercle  c4= new Cercle("c4",p1,6,3);
 		Point centre = c4.getCentre();
 		Double x = centre.getX();
 		Double y = centre.getY();

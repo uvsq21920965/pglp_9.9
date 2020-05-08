@@ -17,25 +17,25 @@ import drawing.Triangle;
 
 public class GroupShapeTest {
   Point point = new Point(0,0);
-  GroupShapes gf1 = new GroupShapes("gf1",point,1);
+  GroupShapes gf1 = new GroupShapes("gf1",1);
   Point point1 = new Point(2,3);
-  GroupShapes gf2 = new GroupShapes("gf2",point1,2);
+  GroupShapes gf2 = new GroupShapes("gf2",2);
   Point point2 = new Point(1,3);
-  Rectangle r1 = new Rectangle("r1",point2,6.2,3.0);
+  Rectangle r1 = new Rectangle("r1",point2,6.2,3.0,1);
   Point point3 = new Point(2,2);
-  Rectangle r2 = new Rectangle("r2",point3,5.0,2.0);
+  Rectangle r2 = new Rectangle("r2",point3,5.0,2.0,2);
   Point point4 = new Point(5,4);
-  Carre ca1 = new Carre("ca1",point4,6);
+  Carre ca1 = new Carre("ca1",point4,6,1);
   Point point5 = new Point(5,8);
-  Carre ca2 = new Carre("ca2",point5,3);
+  Carre ca2 = new Carre("ca2",point5,3,2);
   Point point6 = new Point(2,9);
-  Cercle c1 = new Cercle("c1",point6,4);
+  Cercle c1 = new Cercle("c1",point6,4,1);
   Point point7 = new Point(1.5,3);
-  Cercle c2 = new Cercle("c2",point7,2);
+  Cercle c2 = new Cercle("c2",point7,2,2);
   Point point8 = new Point(4,6);
-  Triangle tr1 = new Triangle("tr1",point8,3.5,5);
+  Triangle tr1 = new Triangle("tr1",point8,3.5,5,1);
   Point point9 = new Point(1.25,2.5);
-  Triangle tr2 = new Triangle("tr2",point9,4,6);
+  Triangle tr2 = new Triangle("tr2",point9,4,6,2);
 
   @Test
   public void getNameGTest() {
@@ -72,20 +72,16 @@ public class GroupShapeTest {
   @Test
   public void Test2move() {
   gf1.move(1, 1);
-  Double x = gf1.getPointRef().getX();
-  Double y = gf1.getPointRef().getY();
-  assertTrue(x.equals(1.0));
-  assertTrue(y.equals(1.0));
-  Ishape  sh1 = gf1.getShapes().get(0);
-  x = ((Shape) sh1).getPointRef().getX();
-  y = ((Shape) sh1).getPointRef().getY();
-  assertTrue(x.equals(3.0));
-  assertTrue(y.equals(4.0));
   Ishape  sh2 = gf1.getShapes().get(1);
-  x = ((Shape) sh2).getPointRef().getX();
-  y = ((Shape) sh2).getPointRef().getY();
+  Double x = ((Rectangle)((Shape) sh2)).getLeftTop().getX();
+  Double y = ((Rectangle)((Shape) sh2)).getLeftTop().getY();
   assertTrue(x.equals(2.0));
   assertTrue(y.equals(4.0));
+  sh2 = gf1.getShapes().get(3);
+  x = ((Cercle)((Shape) sh2)).getCentre().getX();
+  y = ((Cercle)((Shape) sh2)).getCentre().getY();
+  assertTrue(x.equals(3.0));
+  assertTrue(y.equals(10.0));
   }
 
   @Test

@@ -25,8 +25,8 @@ public class GroupShapes extends Shape implements Ishape {
    * @param pointGatt point du reference du groupe.
    * @param idGatt id du groupe.
    */
-  public GroupShapes(String nameGatt, Point pointGatt, int idGatt) {
-	super(nameGatt,pointGatt);
+  public GroupShapes(String nameGatt, int idGatt) {
+	super(nameGatt,idGatt);
     nameG = nameGatt;
     idG = idGatt;
     shapes = new ArrayList<Ishape>();
@@ -98,12 +98,9 @@ public class GroupShapes extends Shape implements Ishape {
    */
   @Override
   public void move(double x, double y) {
-    double xr = this.getPointRef().getX();
-    double yr = this.getPointRef().getY();
     for (Ishape shape : shapes) {
-      shape.move(x+xr, y+yr);
+      shape.move(x, y);
     }
-    this.setPointRef(xr+x, yr+y);
   }
 
   /**

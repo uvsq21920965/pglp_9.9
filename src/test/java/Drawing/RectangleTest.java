@@ -10,13 +10,13 @@ import drawing.Rectangle;
 public class RectangleTest {
 
   Point point = new Point(0,0);
-  Rectangle  r1= new Rectangle("r1",point,5,4);
+  Rectangle  r1= new Rectangle("r1",point,5,4,1);
 
   @Test
   public void movetest() {
     r1.move(2, 3);
-    Double x = r1.getPointRef().getX();
-    Double y = r1.getPointRef().getY();
+    Double x = r1.getLeftTop().getX();
+    Double y = r1.getLeftTop().getY();
     assertTrue(x.equals(2.0));
     assertTrue(y.equals(3.0));
    }
@@ -30,14 +30,15 @@ public class RectangleTest {
   @Test
   public void getPointRefTest( ) {
     Point p = new Point(5,8);
-    Rectangle  r3= new Rectangle("r3",p,8.3,4);
-    Double x = r3.getPointRef().getX();
-    Double y = r3.getPointRef().getY();
+    Rectangle  r3= new Rectangle("r3",p,8.3,4,2);
+    Double x = r3.getLeftTop().getX();
+    Double y = r3.getLeftTop().getY();
     assertTrue(x.equals(5.0));
     assertTrue(y.equals(8.0));
-    r3.setPointRef(3.5, 7);
-    x = r3.getPointRef().getX();
-    y = r3.getPointRef().getY();
+    p = new Point(3.5,7);
+    r3.setLeftTop(p);
+    x = r3.getLeftTop().getX();
+    y = r3.getLeftTop().getY();
     assertTrue(x.equals(3.5));
     assertTrue(y.equals(7.0));
    }

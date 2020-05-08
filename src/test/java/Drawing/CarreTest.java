@@ -10,13 +10,13 @@ import drawing.Point;
 public class CarreTest {
 
 	  Point point = new Point(0,0);
-	  Carre  ca1= new Carre("ca1",point,4);
+	  Carre  ca1= new Carre("ca1",point,4,1);
 
 	  @Test
 	  public void movetest() {
 	    ca1.move(2, 3);
-	    Double x = ca1.getPointRef().getX();
-	    Double y = ca1.getPointRef().getY();
+	    Double x = ca1.getLeftTop().getX();
+	    Double y = ca1.getLeftTop().getY();
 	    assertTrue(x.equals(2.0));
 	    assertTrue(y.equals(3.0));
 	   }
@@ -30,14 +30,15 @@ public class CarreTest {
 	  @Test
 	  public void getPointRefTest( ) {
 	    Point p = new Point(5,8);
-	    Carre  ca3= new Carre("ca3",p,8.3);
-	    Double x = ca3.getPointRef().getX();
-	    Double y = ca3.getPointRef().getY();
+	    Carre  ca3= new Carre("ca3",p,8.3,2);
+	    Double x = ca3.getLeftTop().getX();
+	    Double y = ca3.getLeftTop().getY();
 	    assertTrue(x.equals(5.0));
 	    assertTrue(y.equals(8.0));
-	    ca3.setPointRef(3.5, 7);
-	    x = ca3.getPointRef().getX();
-	    y = ca3.getPointRef().getY();
+	    p = new Point(3.5,7);
+	    ca3.setLeftTop(p);
+	    x = ca3.getLeftTop().getX();
+	    y = ca3.getLeftTop().getY();
 	    assertTrue(x.equals(3.5));
 	    assertTrue(y.equals(7.0));
 	   }
