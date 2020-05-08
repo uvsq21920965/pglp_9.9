@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat May 09 00:39:16 CEST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0171-f671-5698-000003832a58 
+on database directory /home/oem/git/pglp_9.9/shapedb with class loader sun.misc.Launcher$AppClassLoader@7f31245a 
+Loaded from file:/home/oem/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Private Build
+java.runtime.version=1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10
+user.dir=/home/oem/git/pglp_9.9
+os.name=Linux
+os.arch=amd64
+os.version=4.15.0-20-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
