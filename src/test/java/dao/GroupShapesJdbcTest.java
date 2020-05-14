@@ -11,13 +11,7 @@ import java.sql.SQLException;
 import org.junit.Before;
 import org.junit.Test;
 
-import drawing.Carre;
-import drawing.Cercle;
-import drawing.GroupShapes;
-import drawing.Ishape;
-import drawing.Point;
-import drawing.Rectangle;
-import drawing.Triangle;
+import shape.*;
 
 public class GroupShapesJdbcTest {
 	GroupShapesJdbc gsjdbc = new GroupShapesJdbc();

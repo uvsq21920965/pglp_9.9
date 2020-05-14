@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import drawing.Carre;
-import drawing.Point;
+import shape.Carre;
+import shape.Point;
 
 
 public class CarreJdbc implements Dao<Carre>{

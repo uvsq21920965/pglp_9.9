@@ -11,8 +11,8 @@ import java.sql.SQLException;
 import org.junit.Before;
 import org.junit.Test;
 
-import drawing.Point;
-import drawing.Triangle;
+import shape.Point;
+import shape.Triangle;
 
 public class TriangleJdbcTest {
 

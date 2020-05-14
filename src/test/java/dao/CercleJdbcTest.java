@@ -11,8 +11,8 @@ import java.sql.SQLException;
 import org.junit.Before;
 import org.junit.Test;
 
-import drawing.Cercle;
-import drawing.Point;
+import shape.Cercle;
+import shape.Point;
 
 public class CercleJdbcTest {
 	CercleJdbc cjdbc=new CercleJdbc();
@@ -51,7 +51,7 @@ public class CercleJdbcTest {
 	    assertEquals(c.getName(),"c2");
 	    Double x = c.getCentre().getX();
 	    Double y = c.getCentre().getY();
-	    Double redius = c.getRedius();
+	    Double redius = c.getRadius();
 	    assertTrue(x.equals(0.0));
 	    assertTrue(y.equals(0.0));
 	    assertTrue(redius.equals(2.0));
@@ -72,7 +72,7 @@ public class CercleJdbcTest {
 		  assertEquals(c.getName(),"c3");
 		  Double x = c.getCentre().getX();
 		  Double y = c.getCentre().getY();
-		  Double redius = c.getRedius();
+		  Double redius = c.getRadius();
 		  assertTrue(x.equals(5.0));
 		  assertTrue(y.equals(8.0));
 		  assertTrue(redius.equals(6.0));

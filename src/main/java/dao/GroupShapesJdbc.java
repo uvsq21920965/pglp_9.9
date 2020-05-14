@@ -6,12 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import drawing.Carre;
-import drawing.Cercle;
-import drawing.GroupShapes;
-import drawing.Ishape;
-import drawing.Rectangle;
-import drawing.Triangle;
+import shape.Carre;
+import shape.Cercle;
+import shape.GroupShapes;
+import shape.Ishape;
+import shape.Rectangle;
+import shape.Triangle;
 
 public class GroupShapesJdbc implements Dao<GroupShapes> {
 

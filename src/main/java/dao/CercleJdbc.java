@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import drawing.Cercle;
-import drawing.Point;
+import shape.Cercle;
+import shape.Point;
 
 public class CercleJdbc implements Dao<Cercle>{
 
@@ -61,7 +61,7 @@ public class CercleJdbc implements Dao<Cercle>{
       create.setString(1, obj.getName());
       create.setDouble(2, obj.getCentre().getX());
       create.setDouble(3, obj.getCentre().getY());
-      create.setDouble(4, obj.getRedius());
+      create.setDouble(4, obj.getRadius());
       create.setInt(5, obj.getGroupId());
       status = create.executeUpdate();
         connexion.close();
@@ -138,7 +138,7 @@ public class CercleJdbc implements Dao<Cercle>{
       update = connexion.prepareStatement(updateString);
       update.setDouble(1, obj.getCentre().getX());
       update.setDouble(2, obj.getCentre().getY());
-      update.setDouble(3, obj.getRedius());
+      update.setDouble(3, obj.getRadius());
       update.setInt(4, obj.getGroupId());
       update.setString(5, obj.getName());
       update.executeUpdate();

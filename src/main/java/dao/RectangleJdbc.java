@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import drawing.Point;
-import drawing.Rectangle;
+import shape.Point;
+import shape.Rectangle;
 
 public class RectangleJdbc implements Dao<Rectangle> {
 

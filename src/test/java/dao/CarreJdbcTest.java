@@ -8,8 +8,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import org.junit.Before;
 import org.junit.Test;
-import drawing.Carre;
-import drawing.Point;
+import shape.Carre;
+import shape.Point;
 
 public class CarreJdbcTest {
 
