@@ -8,7 +8,7 @@ import shape.Point;
  * @author Sarra Belmahdi.
  *
  */
-public class CommandCreateCa implements Command{
+public class CommandCreateCa implements CommandCreate<Carre> {
   /**
    * nom du carre.
    */
@@ -47,8 +47,8 @@ public class CommandCreateCa implements Command{
    * methode pour appliquer creer un nouveau carre .
    */
   @Override
-  public void execute() {
+  public Carre execute() {
     // TODO Auto-generated method stub
-    new Carre(name,point,side,groupId);
+    return new Carre(name,point,side,groupId);
   }
 }

@@ -8,7 +8,7 @@ import shape.Point;
  * @author Sarra Belmahdi.
  *
  */
-public class CommandCreateC implements Command {
+public class CommandCreateC implements CommandCreate<Cercle> {
 
   /**
    * nom du cercle.
@@ -48,8 +48,8 @@ public class CommandCreateC implements Command {
    * methode pour creer nouvelle cercle.
    */
   @Override
-  public void execute() {
+  public Cercle execute() {
 	// TODO Auto-generated method stub
-    new Cercle(name,point,radius,groupId);
+    return new Cercle(name,point,radius,groupId);
   }
 }

@@ -8,7 +8,7 @@ import shape.Triangle;
  * @author Sarra Belmahdi.
  *
  */
-public class CommandCreateT implements Command {
+public class CommandCreateT implements CommandCreate<Triangle> {
 
   /**
    * le nom du triangle.
@@ -52,11 +52,11 @@ public class CommandCreateT implements Command {
   }
 
   /**
-   * methode pour creer nouvelle cercle.
+   * methode pour creer nouveau triangle.
    */
   @Override
-  public void execute() {
+  public Triangle execute() {
     // TODO Auto-generated method stub
-    new Triangle(name,point,base,height,groupId);
+    return new Triangle(name,point,base,height,groupId);
   }
 }

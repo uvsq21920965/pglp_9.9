@@ -7,7 +7,7 @@ import shape.GroupShapes;
  * @author Sarra Belmahdi.
  *
  */
-public class CommandMoveGroup implements Command {
+public class CommandMoveGroup implements CommandMove {
 
   /**
    * attribut groupe de formes.

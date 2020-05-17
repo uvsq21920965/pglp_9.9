@@ -3,7 +3,7 @@ package commande;
 import shape.Rectangle;
 import shape.Point;
 
-public class CommandCreateRe implements Command{
+public class CommandCreateRe implements CommandCreate<Rectangle> {
 
   /**
    * nom du rectangle.
@@ -50,8 +50,8 @@ public class CommandCreateRe implements Command{
    * methode pour appliquer creer un nouveau carre .
    */
   @Override
-  public void execute() {
+  public Rectangle execute() {
     // TODO Auto-generated method stub
-    new Rectangle(name,point,length,width,groupId);
+    return new Rectangle(name,point,length,width,groupId);
   }
 }

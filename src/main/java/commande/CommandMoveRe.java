@@ -7,7 +7,7 @@ import shape.Rectangle;
  * @author Sarra Belmahdi.
  *
  */
-public class CommandMoveRe implements Command {
+public class CommandMoveRe implements CommandMove {
 
   /**
    * attribut rectangle.

@@ -7,7 +7,7 @@ import shape.Cercle;
  * @author Sarra Belmahdi.
  *
  */
-public class CommandMoveC implements Command {
+public class CommandMoveC implements CommandMove {
 
   /**
    * attribut cercle.

@@ -7,7 +7,7 @@ import shape.GroupShapes;
  * @author Sarra Belmahdi.
  *
  */
-public class CommadCreateGroup implements Command {
+public class CommadCreateGroup implements CommandCreate<GroupShapes>{
 
   /**
    * nom du groupe.
@@ -31,11 +31,11 @@ public class CommadCreateGroup implements Command {
   }
 
   /**
-   * methode pour creer un nouveau groupe.
+   * methode pour creer un nouveau groupe de forme.
    */
   @Override
-  public void execute() {
+  public GroupShapes execute() {
     // TODO Auto-generated method stub
-    new GroupShapes(nameG,idG);	
+    return new GroupShapes(nameG,idG);	
   }
 }
