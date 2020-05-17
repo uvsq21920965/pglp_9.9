@@ -203,6 +203,7 @@ public class DrawingTui {
           }
       }
     } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
+      System.out.println("votre description de dessin est erronée.");
       return null;
     }
     return command;
@@ -240,7 +241,7 @@ public class DrawingTui {
 	StringBuffer affiche = new StringBuffer();
     for(Shape shape : this.getUserShapes()) {
       affiche.append(this.afficheDessin(shape));
-      affiche.append("\\r");
+      affiche.append("\n");
     }
     return affiche+"";
   }
