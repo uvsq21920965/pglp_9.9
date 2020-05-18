@@ -18,8 +18,8 @@ public class CommandeMoveTtest {
 	  public void executeTest() {
 	    mvt.execute();
 	    assertEquals(t.getName(),"t1");
-	    Double x = point.getX();
-	    Double y = point.getY();
+	    Double x = t.getTop().getX();
+	    Double y = t.getTop().getY();
 	    Double base = t.getBase();
 	    Double height = t.getHeight();
 	    assertTrue(x.equals(6.2));

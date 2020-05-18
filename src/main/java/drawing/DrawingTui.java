@@ -22,16 +22,17 @@ public class DrawingTui {
   private List<Shape> formes;
 
   /**
-   * 
+   * la liste des groupe créer.
    */
   private List<GroupShapes> groupes;
-
+ 
   /**
    * constructeur.
    */
-  public DrawingTui() {
+  public DrawingTui() { 
     formes = new ArrayList<Shape>();
     groupes = new ArrayList<GroupShapes>();
+    
   }
 
   /**
@@ -123,6 +124,28 @@ public class DrawingTui {
         return new CommandMoveT(((Triangle)shape),x,y);
     }
     return null;	
+}
+ 
+  /**
+   * methode pour sauvgarder un dessin.
+   * @return commandSave.
+   */
+  public Command saveGroups(GroupShapes gs) {
+	CommandSave cs = new CommandSave(gs);
+    cs.execute();
+    return cs;
+  }
+
+  /**
+   * méthode pour charger un dessin.
+   *@return commandeLoad.
+   */
+  public Command loadGroups(String nameGroupe) {
+    CommandLoad cl= new CommandLoad(nameGroupe);
+    GroupShapes gs = cl.execute();
+    groupes.clear();
+    formes.add((Shape)gs.getShapes());
+    return cl;
   }
 
   /**
@@ -144,18 +167,36 @@ public class DrawingTui {
           double x1 = Double.parseDouble(textUser[2]);
       	  double y1 = Double.parseDouble(textUser[3]);
           command = this.whichFormeMove(shape,x1,y1);
-          ((CommandMove)command).execute();
+          ((ICommand)command).execute();
+          break;
+        case"affiche":
+          shape = findShape(textUser[1]);
+          command = new CommandAffiche(shape);
+          System.out.println(((ICommandAffiche)command).execute());
           break;
         case "movegroupe":
-        	GroupShapes shapeG = findGroup(textUser[1]);
-        	double x2 = Double.parseDouble(textUser[2]);
-        	double y2 = Double.parseDouble(textUser[3]);
-        	command = new CommandMoveGroup(shapeG,x2,y2);
-            ((CommandMove)command).execute();
-        	break;
+          GroupShapes shapeG = findGroup(textUser[1]);
+          double x2 = Double.parseDouble(textUser[2]);
+          double y2 = Double.parseDouble(textUser[3]);
+          command = new CommandMoveGroup(shapeG,x2,y2);
+          ((ICommand)command).execute();
+           break;
+        case "affichegroupe":
+          GroupShapes shapeG1 = findGroup(textUser[1]);
+          command = new CommandAfficheGroup(shapeG1);
+          System.out.println(((ICommandAffiche)command).execute());
+          break;
+        case "save":
+          GroupShapes shapeG2 = findGroup(textUser[1]);
+          command = saveGroups(shapeG2);
+          System.out.println("votre dessin a éte sauvgardé");
+        case "load":
+        	String shapeG3 = textUser[1];
+        	command = loadGroups(shapeG3);
+        	System.out.println("votre dessin a éte chargé");
         case "exit":
     	  command = new CommandExit();
-    	  ((CommandMove)command).execute();
+    	  ((ICommand)command).execute();
           break;
         default:
           double x3 = Double.parseDouble(textUser[2]);
@@ -215,6 +256,7 @@ public class DrawingTui {
    * @return le dessin textuel.
    */
   public String afficheDessin(Shape shape) {
+
     if(shape instanceof Carre) {
       return ((Carre)shape).Affiche();
     }
@@ -236,7 +278,10 @@ public class DrawingTui {
     }
     return null;	
   }
-
+  /**
+   * methode pour afficher les formes actuelles dessinées.
+   * @return
+   */
   public String afficheAllDessins() {
 	StringBuffer affiche = new StringBuffer();
     for(Shape shape : this.getUserShapes()) {

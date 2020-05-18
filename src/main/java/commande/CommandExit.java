@@ -1,6 +1,6 @@
 package commande;
 
-public class CommandExit implements CommandMove{
+public class CommandExit implements ICommand{
 
   /**
    * methode pour fermer le programme.

@@ -7,7 +7,7 @@ import shape.Triangle;
  * @author sarra Belmahdi.
  *
  */
-public class CommandMoveT implements CommandMove {
+public class CommandMoveT implements ICommand {
 
   /**
    * attribut triangle.

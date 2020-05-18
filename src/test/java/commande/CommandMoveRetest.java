@@ -17,8 +17,8 @@ public class CommandMoveRetest {
 	  public void executeTest() {
 	    mvr.execute();
 	    assertEquals(r.getName(),"r1");
-	    Double x = point.getX();
-	    Double y = point.getY();
+	    Double x = r.getLeftTop().getX();
+	    Double y = r.getLeftTop().getY();
 	    Double length = r.getLength();
 	    Double width = r.getWidth();
 	    assertTrue(x.equals(6.2));

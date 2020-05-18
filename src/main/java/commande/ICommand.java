@@ -5,7 +5,7 @@ package commande;
  * @author Sarra Belmahdi.
  *
  */
-public interface CommandMove extends Command {
+public interface ICommand extends Command {
 
   /**
    * appliquer une commande move.

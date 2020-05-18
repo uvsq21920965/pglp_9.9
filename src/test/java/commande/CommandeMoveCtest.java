@@ -18,8 +18,8 @@ public class CommandeMoveCtest {
 	  public void executeTest() {
 	    mvc.execute();
 	    assertEquals(c.getName(),"c1");
-	    Double x = point.getX();
-	    Double y = point.getY();
+	    Double x = c.getCentre().getX();
+	    Double y = c.getCentre().getY();
 	    Double rayon = c.getRadius();
 	    assertTrue(x.equals(6.2));
 	    assertTrue(y.equals(8.0));

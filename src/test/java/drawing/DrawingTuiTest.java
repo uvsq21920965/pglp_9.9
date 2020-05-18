@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 
 import commande.Command;
+import commande.CommandAffiche;
 import commande.CommandCreateC;
 import commande.CommandCreateCa;
 import commande.CommandCreateRe;
@@ -100,6 +101,9 @@ public class DrawingTuiTest {
     assertTrue(y.equals(2.1));
     assertTrue(base.equals(4.0));
     assertTrue(height.equals(9.0));
+    userCommande = "affiche t1";
+    commande = dt.nextCommand(userCommande);
+    assertTrue( commande instanceof CommandAffiche);
     userCommande = "movegroupe(g1,2,4)";
     commande = dt.nextCommand(userCommande);
     assertTrue( commande instanceof CommandMoveGroup);

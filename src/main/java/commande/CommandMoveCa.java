@@ -7,7 +7,7 @@ import shape.Carre;
  * @author sarra Belmahdi.
  *
  */
-public class CommandMoveCa implements CommandMove{
+public class CommandMoveCa implements ICommand{
 
   /**
    * attribut carre.
