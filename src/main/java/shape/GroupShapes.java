@@ -109,11 +109,11 @@ public class GroupShapes extends Shape implements Ishape {
    * @return les caractéristiques du groupe.
    */
   @Override
-  public String Affiche() {
+  public String affiche() {
     StringBuffer affiche = new StringBuffer();
     for (Ishape shape : shapes) {
       affiche.append(" ");
-      affiche.append(shape.Affiche());
+      affiche.append(shape.affiche());
 	}
     return " Groupe " +this.getNameG()+": " + affiche;
   }

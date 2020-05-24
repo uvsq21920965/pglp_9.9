@@ -7,7 +7,7 @@ import shape.Carre;
  * @author sarra Belmahdi.
  *
  */
-public class CommandMoveCa implements ICommand{
+public class CommandMoveCa implements ICommand {
 
   /**
    * attribut carre.
@@ -17,23 +17,23 @@ public class CommandMoveCa implements ICommand{
   /**
    * l'attribut de coordonnée x du deplacement.
    */
-  private double x;
+  private double x1;
 
   /**
    * l'attribut de coordonnée y du deplacement.
    */
-  private double y;
+  private double y1;
 
   /**
    * constructeur.
    * @param caAtt objet carre.
-   * @param xAtt coordonnée x du deplacement.
-   * @param yAtt coordonnée y du deplacement.
+   * @param x1Att coordonnée x du deplacement.
+   * @param y1Att coordonnée y du deplacement.
    */
-  public CommandMoveCa(Carre caAtt,double xAtt,double yAtt) {
+  public CommandMoveCa(Carre caAtt,double x1Att,double y1Att) {
     ca = caAtt;
-    x = xAtt;
-    y = yAtt;
+    x1 = x1Att;
+    y1 = y1Att;
   }
 
   /**
@@ -42,6 +42,6 @@ public class CommandMoveCa implements ICommand{
   @Override
   public void execute() {
     // TODO Auto-generated method stub
-    ca.move(x, y);
+    ca.move(x1, y1);
   }
 }

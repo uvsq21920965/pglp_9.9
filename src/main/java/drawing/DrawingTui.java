@@ -92,7 +92,7 @@ public class DrawingTui {
    * @param idG id du groupe
    * @param shape la forme qui va etre ajoutée.
    */
-  public void CreateGroupe(int idG,Shape shape) {
+  public void createGroupe(int idG,Shape shape) {
     Boolean existeG = false;
     for(GroupShapes groupe: groupes) {
       if(((Integer)groupe.getGroupId()).equals((Integer)idG)) {
@@ -132,7 +132,7 @@ public class DrawingTui {
 }
  
   /**
-   * methode pour sauvgarder un dessin.
+   * methode pour sauvegarder un dessin.
    * @return commandSave.
    */
   public Command saveGroups(GroupShapes gs) {
@@ -207,13 +207,9 @@ public class DrawingTui {
           break;
         case "afficheall":
           String affiche2 = afficheAllDessins();
-          if(affiche2.equals(null)) {
-            System.out.println("vous avez dessiné aucune forme géométrique");
-          } else {
-            if(this.getUserShapes().size()>=1) {
-              System.out.println("vos dessins actuels sont:");
-  		      System.out.println(affiche2);
-            }
+          if(this.getUserShapes().size()>=1) {
+            System.out.println("vos dessins actuels sont:");
+            System.out.println(affiche2);
           }
           break;
         case "save":
@@ -243,7 +239,7 @@ public class DrawingTui {
         	  command = new CommandCreateC(textUser[0],point,radius,groupId);
         	  shape = ((CommandCreate<Cercle>)command).execute();
     	      formes.add((Cercle)shape);
-    	      CreateGroupe(groupId,(Cercle)shape);
+    	      createGroupe(groupId,(Cercle)shape);
     	      break;
             case "carre":
           	  groupId = Integer.parseInt(textUser[5]);
@@ -251,7 +247,7 @@ public class DrawingTui {
           	  command = new CommandCreateCa(textUser[0],point,side,groupId);
           	  shape = ((CommandCreate<Carre>)command).execute();
   	          formes.add((Carre)shape);
-  	          CreateGroupe(groupId,(Carre)shape);
+  	          createGroupe(groupId,(Carre)shape);
     	      break;
             case "triangle":
         	  groupId = Integer.parseInt(textUser[6]);
@@ -260,7 +256,7 @@ public class DrawingTui {
               command = new CommandCreateT(textUser[0],point,base,height,groupId);
         	  shape = ((CommandCreate<Triangle>)command).execute();
     	      formes.add((Triangle)shape);
-    	      CreateGroupe(groupId,(Triangle)shape);
+    	      createGroupe(groupId,(Triangle)shape);
     	      break;
             case "rectangle":
         	  groupId = Integer.parseInt(textUser[6]);
@@ -269,7 +265,7 @@ public class DrawingTui {
               command = new CommandCreateRe(textUser[0],point,length,width,groupId);
               shape = ((CommandCreate<Rectangle>)command).execute();
     	      formes.add((Rectangle)shape);
-    	      CreateGroupe(groupId,(Rectangle)shape);
+    	      createGroupe(groupId,(Rectangle)shape);
     	      break;
             default:
               System.out.println("forme invalide");
@@ -290,23 +286,23 @@ public class DrawingTui {
    */
   public String afficheDessin(Shape shape) {
     if(shape instanceof Cercle) {
-      return ((Cercle)shape).Affiche();
+      return ((Cercle)shape).affiche();
     }
 
     if(shape instanceof Rectangle) {
       if(((Rectangle) shape).getLength() == ((Rectangle) shape).getWidth()) {
-        return((Carre)shape).Affiche();  
+        return((Carre)shape).affiche();  
       } else {
-        return((Rectangle)shape).Affiche();
+        return((Rectangle)shape).affiche();
       }
   	}
 
     if(shape instanceof Triangle) {
-      return ((Triangle)shape).Affiche();
+      return ((Triangle)shape).affiche();
     }
 
     if(shape instanceof GroupShapes) {
-      return ((GroupShapes)shape).Affiche();
+      return ((GroupShapes)shape).affiche();
     }
     return null;	
   }

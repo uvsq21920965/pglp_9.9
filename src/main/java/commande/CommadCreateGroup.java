@@ -7,7 +7,7 @@ import shape.GroupShapes;
  * @author Sarra Belmahdi.
  *
  */
-public class CommadCreateGroup implements CommandCreate<GroupShapes>{
+public class CommadCreateGroup implements CommandCreate<GroupShapes> {
 
   /**
    * nom du groupe.
@@ -22,7 +22,6 @@ public class CommadCreateGroup implements CommandCreate<GroupShapes>{
   /**
    * Constructeur.
    * @param nameGatt nom du groupe.
-   * @param pointGatt point du reference du groupe.
    * @param idGatt id du groupe.
    */
   public CommadCreateGroup(String nameGatt, int idGatt) {
@@ -36,6 +35,6 @@ public class CommadCreateGroup implements CommandCreate<GroupShapes>{
   @Override
   public GroupShapes execute() {
     // TODO Auto-generated method stub
-    return new GroupShapes(nameG,idG);	
+    return new GroupShapes(nameG,idG);
   }
 }

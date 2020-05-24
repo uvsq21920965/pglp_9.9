@@ -17,6 +17,6 @@ public interface Ishape {
   /**
    * methode pour afficher les caractéristiques de la forme.
    */
-  public String Affiche();
+  public String affiche();
 
 }

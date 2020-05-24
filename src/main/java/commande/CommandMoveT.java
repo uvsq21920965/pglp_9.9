@@ -12,28 +12,28 @@ public class CommandMoveT implements ICommand {
   /**
    * attribut triangle.
    */
-  private Triangle t;
+  private Triangle tr;
 
   /**
    * l'attribut de coordonnée x du deplacement.
    */
-  private double x;
+  private double x1;
 
   /**
    * l'attribut de coordonnée y du deplacement.
    */
-  private double y;
+  private double y1;
 
   /**
    * constructeur.
-   * @param caAtt objet rectangle.
-   * @param xAtt coordonnée x du deplacement.
-   * @param yAtt coordonnée y du deplacement.
+   * @param trAtt objet rectangle.
+   * @param x1Att coordonnée x du deplacement.
+   * @param y1Att coordonnée y du deplacement.
    */
-  public CommandMoveT(Triangle tAtt,double xAtt,double yAtt) {
-    t = tAtt;
-    x = xAtt;
-    y = yAtt;
+  public CommandMoveT(Triangle trAtt,double x1Att,double y1Att) {
+    tr = trAtt;
+    x1 = x1Att;
+    y1 = y1Att;
   }
 
   /**
@@ -42,6 +42,6 @@ public class CommandMoveT implements ICommand {
   @Override
   public void execute() {
     // TODO Auto-generated method stub
-    t.move(x, y);
+    tr.move(x1, y1);
   }
 }

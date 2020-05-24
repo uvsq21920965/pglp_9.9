@@ -12,28 +12,28 @@ public class CommandMoveRe implements ICommand {
   /**
    * attribut rectangle.
    */
-  private Rectangle r;
+  private Rectangle re;
 
   /**
    * l'attribut de coordonnée x du deplacement.
    */
-  private double x;
+  private double x1;
 
   /**
    * l'attribut de coordonnée y du deplacement.
    */
-  private double y;
+  private double y1;
 
   /**
    * constructeur.
-   * @param caAtt objet rectangle.
-   * @param xAtt coordonnée x du deplacement.
-   * @param yAtt coordonnée y du deplacement.
+   * @param reAtt objet rectangle.
+   * @param x1Att coordonnée x du deplacement.
+   * @param y1Att coordonnée y du deplacement.
    */
-  public CommandMoveRe(Rectangle rAtt,double xAtt,double yAtt) {
-    r = rAtt;
-    x = xAtt;
-    y = yAtt;
+  public CommandMoveRe(Rectangle reAtt,double x1Att,double y1Att) {
+    re = reAtt;
+    x1 = x1Att;
+    y1 = y1Att;
   }
 
   /**
@@ -42,6 +42,6 @@ public class CommandMoveRe implements ICommand {
   @Override
   public void execute() {
     // TODO Auto-generated method stub
-    r.move(x, y);
+    re.move(x1, y1);
   }
 }

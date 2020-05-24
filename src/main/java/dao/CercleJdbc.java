@@ -8,7 +8,7 @@ import java.sql.Statement;
 import shape.Cercle;
 import shape.Point;
 
-public class CercleJdbc implements Dao<Cercle>{
+public class CercleJdbc implements Dao<Cercle> {
 
   /**
    * un attribut pour établire la connexion.
@@ -64,7 +64,7 @@ public class CercleJdbc implements Dao<Cercle>{
       create.setDouble(4, obj.getRadius());
       create.setInt(5, obj.getGroupId());
       status = create.executeUpdate();
-        connexion.close();
+      connexion.close();
     } catch (SQLException e) {
       e.printStackTrace();
     }
@@ -129,7 +129,7 @@ public class CercleJdbc implements Dao<Cercle>{
    * @return l'objet après la mise à jour.
    */
   @Override
-  public Cercle update(	Cercle obj) {
+  public Cercle update(Cercle obj) {
     connexion = Dao.getConnection();
     PreparedStatement update =  null;
     String updateString = "update cercles set x = (?), "

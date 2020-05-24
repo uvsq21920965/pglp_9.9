@@ -73,7 +73,7 @@ public class Cercle extends Shape{
    * @return les caractéristiques
    */
   @Override
-  public String Affiche() {
+  public String affiche() {
   Point point = this.getCentre();
   return this.getName()+" = Cercle((centre("+point.getX()+","
       +point.getY()+"),rayon="+this.getRadius()+")";

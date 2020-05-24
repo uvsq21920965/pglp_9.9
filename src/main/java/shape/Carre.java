@@ -32,7 +32,7 @@ public class Carre extends Rectangle {
    * @return les caractéristiques.
    */
   @Override
-  public String Affiche() {
+  public String affiche() {
 	Point point = this.getLeftTop();
     return this.getName()+" = Carre( point de reférence("+point.getX()+","
 	    +point.getY()+"),coté = "+this.getSide()+")";

@@ -79,7 +79,7 @@ public class Triangle extends Shape{
    * @return les caractéristiques.
    */
   @Override
-  public String Affiche() {
+  public String affiche() {
     Point point = this.getTop();
       return this.getName()+" = Triangle(Sommet("+point.getX()+","
         +point.getY()+"),base="+this.getBase()+", hauteur="+this.getHeight()+")";

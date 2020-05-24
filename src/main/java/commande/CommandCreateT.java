@@ -13,7 +13,7 @@ public class CommandCreateT implements CommandCreate<Triangle> {
   /**
    * le nom du triangle.
    */
-   private String name;
+  private String name;
 
   /**
    * la base du triangle.
@@ -21,7 +21,7 @@ public class CommandCreateT implements CommandCreate<Triangle> {
   private double base;
 
   /**
-   * la hauteur du triangle;
+   * la hauteur du triangle.
    */
   private double height;
  
@@ -31,19 +31,20 @@ public class CommandCreateT implements CommandCreate<Triangle> {
   private Point point;
 
   /**
-   * id du groupe de cercle;
+   * id du groupe de triangle.
    */
-   private int groupId;
+  private int groupId;
 
   /**
    * constructeur.
-   * @param nameRatt nom du triangle.
-   * @param pointT point de reference.
-   * @param lengthAtt la longueur du triangle.
-   * @param widthAtt la largeur du triangle.
-   * @param groupId le id du groupe du triangle.
+   * @param nameAtt nom du triangle.
+   * @param pointAtt point de reference.
+   * @param baseAtt la longueur du triangle.
+   * @param heightAtt la largeur du triangle.
+   * @param groupIdAtt le id du groupe du triangle.
    */
-  public CommandCreateT(String nameAtt,Point pointAtt ,double baseAtt,double heightAtt,int groupIdAtt) {
+  public CommandCreateT(String nameAtt,Point pointAtt,
+      double baseAtt,double heightAtt,int groupIdAtt) {
     name = nameAtt;
     point = pointAtt;
     base = baseAtt;

@@ -17,23 +17,23 @@ public class CommandMoveGroup implements ICommand {
   /**
    * l'attribut de coordonnée x du deplacement.
    */
-  private double x;
+  private double x1;
 
   /**
    * l'attribut de coordonnée y du deplacement.
    */
-  private double y;
+  private double y1;
 
   /**
    * constructeur.
-   * @param gsAtt objet carre.
-   * @param xAtt coordonnée x du deplacement.
-   * @param yAtt coordonnée y du deplacement.
+   * @param gsAtt objet roupe.
+   * @param x1Att coordonnée x du deplacement.
+   * @param y1Att coordonnée y du deplacement.
    */
-  public CommandMoveGroup(GroupShapes gsAtt,double xAtt,double yAtt) {
+  public CommandMoveGroup(GroupShapes gsAtt,double x1Att,double y1Att) {
     gs = gsAtt;
-    x = xAtt;
-    y = yAtt;
+    x1 = x1Att;
+    y1 = y1Att;
   }
 
   /**
@@ -42,6 +42,6 @@ public class CommandMoveGroup implements ICommand {
   @Override
   public void execute() {
     // TODO Auto-generated method stub
-    gs.move(x, y);
+    gs.move(x1, y1);
   }
 }

@@ -67,5 +67,5 @@ public abstract class Shape implements Ishape{
   /**
    * methode pour afficher les caractéristiques de la forme.
    */
-  public abstract String Affiche();
+  public abstract String affiche();
 }

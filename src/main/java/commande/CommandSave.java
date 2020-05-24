@@ -18,6 +18,7 @@ public class CommandSave implements ICommand {
    * l'attribut groupeJdbc.
    */
   private GroupShapesJdbc gsj;
+
   /**
    * Constructeur.
    * @param gsAtt la groupe à sauvegarder.

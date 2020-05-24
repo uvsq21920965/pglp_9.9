@@ -1,8 +1,13 @@
 package commande;
 
-import shape.Rectangle;
 import shape.Point;
+import shape.Rectangle;
 
+/**
+ * CommandCreateRe classe.
+ * @author sarra Belmahdi.
+ *
+ */
 public class CommandCreateRe implements CommandCreate<Rectangle> {
 
   /**
@@ -16,7 +21,7 @@ public class CommandCreateRe implements CommandCreate<Rectangle> {
   private Point point;
 
   /**
-   * id du groupe de carre
+   * id du groupe de rectangle.
    */
   private int groupId;
 
@@ -32,13 +37,14 @@ public class CommandCreateRe implements CommandCreate<Rectangle> {
 
   /**
    * constructeur.
-   * @param nameRatt nom du rectangle.
-   * @param pointR point de reference.
+   * @param nameAtt nom du rectangle.
+   * @param pointAtt point de reference.
    * @param lengthAtt la longueur du rectangle.
    * @param widthAtt la largeur du rectangle.
-   * @param groupId le id du groupe du rectangle.
+   * @param groupIdAtt le id du groupe du rectangle.
    */
-  public CommandCreateRe(String nameAtt,Point pointAtt,double lengthAtt,double widthAtt,int groupIdAtt) {
+  public CommandCreateRe(String nameAtt,Point pointAtt,double lengthAtt,
+      double widthAtt,int groupIdAtt) {
     name = nameAtt;
     point = pointAtt;
     length = lengthAtt;
@@ -47,7 +53,7 @@ public class CommandCreateRe implements CommandCreate<Rectangle> {
   }
 
   /**
-   * methode pour appliquer creer un nouveau carre .
+   * methode pour appliquer creer un nouveau rectangle .
    */
   @Override
   public Rectangle execute() {

@@ -10,7 +10,7 @@ import shape.Carre;
 import shape.Point;
 
 
-public class CarreJdbc implements Dao<Carre>{
+public class CarreJdbc implements Dao<Carre> {
 
   /**
    * un attribut pour établire la connexion.
@@ -21,7 +21,7 @@ public class CarreJdbc implements Dao<Carre>{
    *la requte da creation de la table Carres.
    */
   private String table = "create table carres(name varchar(20) NOT NULL PRIMARY KEY, " 
-	      + " x double NOT NULL, y double NOT NULL, side double Not Null,groupId integer)";
+      + " x double NOT NULL, y double NOT NULL, side double Not Null,groupId integer)";
 
   /**
    * attribut statemet.
@@ -40,8 +40,8 @@ public class CarreJdbc implements Dao<Carre>{
       if (!res.next()) {
         statement.execute(table);
       }
-    statement.close();
-    connexion.close();
+      statement.close();
+      connexion.close();
     } catch (SQLException e1) {
       e1.printStackTrace();
     }
@@ -76,7 +76,7 @@ public class CarreJdbc implements Dao<Carre>{
       }
     } catch (SQLException e1) {
       e1.printStackTrace();
-	}
+    }
     if (status > 0) {
       return obj;
     } else {
@@ -108,7 +108,7 @@ public class CarreJdbc implements Dao<Carre>{
         double y = resultat.getDouble("y");
         double side = resultat.getDouble("side");
         int idG = resultat.getInt("groupId");
-        point =new Point(x,y);
+        point = new Point(x,y);
         c = new Carre(nom,point,side,idG);
         connexion.close();
       }
@@ -181,6 +181,6 @@ public class CarreJdbc implements Dao<Carre>{
       }
     } catch (SQLException e1) {
       e1.printStackTrace();
-	}
+    }
   }
 }

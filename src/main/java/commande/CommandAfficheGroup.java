@@ -14,7 +14,7 @@ public class CommandAfficheGroup implements ICommandAffiche {
    * @param gsAtt le groupe à afficher.
    */
   public CommandAfficheGroup(GroupShapes gsAtt) {
-    this.gs = gsAtt;	
+    this.gs = gsAtt;
   }
 
   /**
@@ -22,6 +22,6 @@ public class CommandAfficheGroup implements ICommandAffiche {
    */
   @Override
   public String execute() {
-    return gs.Affiche();
+    return gs.affiche();
   }
 }

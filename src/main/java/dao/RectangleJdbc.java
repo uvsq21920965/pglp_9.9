@@ -20,7 +20,8 @@ public class RectangleJdbc implements Dao<Rectangle> {
    * la requte da creation de la table Rectangles.
    */
   private String table = "create table rectangles(name varchar(20) NOT NULL PRIMARY KEY, " 
-      + " x double NOT NULL, y double NOT NULL, length double Not Null, width double Not Null,groupId integer)";
+      + " x double NOT NULL, y double NOT NULL, length double Not Null, "
+          + "width double Not Null,groupId integer)";
 
   /**
    * attribut statemet.
@@ -56,18 +57,19 @@ public class RectangleJdbc implements Dao<Rectangle> {
     connexion = Dao.getConnection();
     PreparedStatement create =  null;
     int status = 0;
-    String insertString = "insert into rectangles(name, x, y,length,width,groupId) values (?,?,?,?,?,?)";
+    String insertString = "insert into rectangles(name, x, y,length,width,groupId)"
+        + " values (?,?,?,?,?,?)";
     try {
       create = connexion.prepareStatement(insertString);
       create.setString(1, obj.getName());
       create.setDouble(2, obj.getLeftTop().getX());
-	  create.setDouble(3, obj.getLeftTop().getY());
-	  create.setDouble(4, obj.getLength());
-	  create.setDouble(5, obj.getWidth());
-	  create.setInt(6, obj.getGroupId());
-	  status = create.executeUpdate();
-	  connexion.close();
-	} catch (SQLException e) {
+      create.setDouble(3, obj.getLeftTop().getY());
+      create.setDouble(4, obj.getLength());
+      create.setDouble(5, obj.getWidth());
+      create.setInt(6, obj.getGroupId());
+      status = create.executeUpdate();
+      connexion.close();
+    } catch (SQLException e) {
       e.printStackTrace();
     }
     try {
@@ -81,7 +83,7 @@ public class RectangleJdbc implements Dao<Rectangle> {
       return obj;
     } else {
       return null;
-	}
+    }
   }
 
   /**
@@ -109,7 +111,7 @@ public class RectangleJdbc implements Dao<Rectangle> {
         double length = resultat.getDouble("length");
         double width = resultat.getDouble("width");
         int idG = resultat.getInt("groupId");
-        point =new Point(x,y);
+        point = new Point(x,y);
         r = new Rectangle(nom,point,length,width,idG);
         connexion.close();
       }
@@ -140,11 +142,11 @@ public class RectangleJdbc implements Dao<Rectangle> {
     try {
       update = connexion.prepareStatement(updateString);
       update.setDouble(1, obj.getLeftTop().getX());
-	  update.setDouble(2, obj.getLeftTop().getY());
-	  update.setDouble(3, obj.getLength());
-	  update.setDouble(4, obj.getWidth());
-	  update.setInt(5, obj.getGroupId());
-	  update.setString(6, obj.getName());
+      update.setDouble(2, obj.getLeftTop().getY());
+      update.setDouble(3, obj.getLength());
+      update.setDouble(4, obj.getWidth());
+      update.setInt(5, obj.getGroupId());
+      update.setString(6, obj.getName());
       update.executeUpdate();
       connexion.close();
     } catch (SQLException e) {

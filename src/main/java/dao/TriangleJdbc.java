@@ -19,7 +19,8 @@ public class TriangleJdbc implements Dao<Triangle> {
    * la requte da creation de la table Triangles.
    */
   private String table = "create table triangles(name varchar(20) NOT NULL PRIMARY KEY, " 
-	      + " x double NOT NULL, y double NOT NULL, base double Not Null, height double Not Null,groupId integer)";
+      + " x double NOT NULL, y double NOT NULL, base double Not Null, height double Not "
+      + "Null,groupId integer)";
 
   /**
    * attribut statemet.
@@ -55,7 +56,8 @@ public class TriangleJdbc implements Dao<Triangle> {
     connexion = Dao.getConnection();
     PreparedStatement create =  null;
     int status = 0;
-    String insertString = "insert into triangles(name, x, y,base,height,groupId) values (?,?,?,?,?,?)";
+    String insertString = "insert into triangles(name, x, y,base,height,groupId)"
+        + " values (?,?,?,?,?,?)";
     try {
       create = connexion.prepareStatement(insertString);
       create.setString(1, obj.getName());
@@ -108,7 +110,7 @@ public class TriangleJdbc implements Dao<Triangle> {
         double base = resultat.getDouble("base");
         double height = resultat.getDouble("height");
         int idG = resultat.getInt("groupId");
-        point =new Point(x,y);
+        point = new Point(x,y);
         t = new Triangle(nom,point,base,height,idG);
         connexion.close();
       }
@@ -135,7 +137,7 @@ public class TriangleJdbc implements Dao<Triangle> {
     connexion = Dao.getConnection();
     PreparedStatement update =  null;
     String updateString = "update triangles set x = (?), "
-	        + "y = (?), base = (?),height = (?), groupId = (?) where name =(?)";
+        + "y = (?), base = (?),height = (?), groupId = (?) where name =(?)";
     try {
       update = connexion.prepareStatement(updateString);
       update.setDouble(1, obj.getTop().getX());

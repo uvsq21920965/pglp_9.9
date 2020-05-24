@@ -24,7 +24,7 @@ public class GroupShapesJdbc implements Dao<GroupShapes> {
    * la requte da creation de la table GroupShapes.
    */
   private String table = "create table groupshapes(groupeId INTEGER primary key not null"
-	      + ", nomGroupe varchar(20) not null )";
+      + ", nomGroupe varchar(20) not null )";
 
   /**
    *  attribut statemet.
@@ -38,8 +38,8 @@ public class GroupShapesJdbc implements Dao<GroupShapes> {
     connexion = Dao.getConnection();
     try {
       ResultSet res = connexion.getMetaData()
-        .getTables(null,null, "groupshapes".toUpperCase(), null);
-	      statement = connexion.createStatement();
+          .getTables(null,null, "groupshapes".toUpperCase(), null);
+      statement = connexion.createStatement();
       if (!res.next()) {
         statement.execute(table);
       }
@@ -70,11 +70,11 @@ public class GroupShapesJdbc implements Dao<GroupShapes> {
       CarreJdbc caj = new CarreJdbc();
       CercleJdbc cj = new CercleJdbc();
       TriangleJdbc tj = new TriangleJdbc();
-	  for (Ishape p: obj.getShapes()) {
+      for (Ishape p: obj.getShapes()) {
         if (!(p instanceof GroupShapes)) {
           if (p instanceof Rectangle) {
-            if(((Rectangle) p).getLength() == ((Rectangle) p).getWidth()) {
-            	caj.create((Carre) p);
+            if (((Rectangle) p).getLength() == ((Rectangle) p).getWidth()) {
+              caj.create((Carre) p);
             } else {
               rj.create((Rectangle) p);
             }
@@ -87,7 +87,7 @@ public class GroupShapesJdbc implements Dao<GroupShapes> {
           }
         }
       }
-    connexion.close();
+      connexion.close();
     } catch (SQLException e) {
       e.printStackTrace();
     }
@@ -114,82 +114,82 @@ public class GroupShapesJdbc implements Dao<GroupShapes> {
   public GroupShapes find(String id) {
     connexion = Dao.getConnection();
     int groupeid = Integer.parseInt(id);
-	    String findString = "select * from groupshapes where groupeId = (?)";
-	    GroupShapes cs = null;
-	    PreparedStatement find = null;
-	    PreparedStatement findG = null;
-	    try {
-          Rectangle r = null;
-          RectangleJdbc rj = new RectangleJdbc();
-          Carre ca = null;
-          CarreJdbc caj= new CarreJdbc();
-          Cercle c = null;
-          CercleJdbc cj = new CercleJdbc();
-          Triangle tr = null;
-          TriangleJdbc trj = new TriangleJdbc();
-	      find = connexion.prepareStatement(findString);
-	      find.setInt(1, groupeid);
-	      find.execute();
-	      ResultSet resultat = find.getResultSet();
-	      if (resultat.next()) {
-	        cs = new GroupShapes(resultat.getString("nomGroupe"),resultat.getInt("groupeId"));
-	        String findGroupe = "select name from rectangles,Groupshapes where groupId = (?)";
-	        findG = connexion.prepareStatement(findGroupe);
-	        findG.setInt(1, groupeid);
-	        findG.execute();
-	        ResultSet resultat1 = findG.getResultSet();
-	        if (resultat1.next()) {
-	          r = rj.find(resultat1.getString("name"));
-	          cs.add(r);
-	        }
-	        findGroupe = "select name from carres,Groupshapes where groupId = (?)";
-	        findG = connexion.prepareStatement(findGroupe);
-	        findG.setInt(1, groupeid);
-	        findG.execute();
-	        resultat1 = findG.getResultSet();
-	        if (resultat1.next()) {
-	          ca = caj.find(resultat1.getString("name"));
-	          cs.add(ca);
-	        }
-	        findGroupe = "select name from cercles,Groupshapes where groupId = (?)";
-	        findG = connexion.prepareStatement(findGroupe);
-	        findG.setInt(1, groupeid);
-	        findG.execute();
-	        resultat1 = findG.getResultSet();
-	        if (resultat1.next()) {
-	          c = cj.find(resultat1.getString("name"));
-	          cs.add(c);
-	        }
-	        findGroupe = "select name from Triangles,Groupshapes where groupId = (?)";
-	        findG = connexion.prepareStatement(findGroupe);
-	        findG.setInt(1, groupeid);
-	        findG.execute();
-	        resultat1 = findG.getResultSet();
-	        if (resultat1.next()) {
-	          tr  = trj.find(resultat1.getString("name"));
-	          cs.add(tr);
-	        }
-	        connexion.close();
-	      }
-	    } catch (SQLException e) {
-	      e.printStackTrace();
-	    }
-	    try {
-	      if (findG != null) {
-	        findG.close();
-	      }
-	    } catch (SQLException e1) {
-	      e1.printStackTrace();
-	    }
-	    try {
-	      if (find != null) {
-	        find.close();
-	      }
-	    } catch (SQLException e2) {
-	      e2.printStackTrace();
-	    }
-	    return cs;
-	  }
+    String findString = "select * from groupshapes where groupeId = (?)";
+    GroupShapes cs = null;
+    PreparedStatement find = null;
+    PreparedStatement findG = null;
+    try {
+      Rectangle r = null;
+      RectangleJdbc rj = new RectangleJdbc();
+      Carre ca = null;
+      CarreJdbc caj = new CarreJdbc();
+      Cercle c = null;
+      CercleJdbc cj = new CercleJdbc();
+      Triangle tr = null;
+      TriangleJdbc trj = new TriangleJdbc();
+      find = connexion.prepareStatement(findString);
+      find.setInt(1, groupeid);
+      find.execute();
+      ResultSet resultat = find.getResultSet();
+      if (resultat.next()) {
+        cs = new GroupShapes(resultat.getString("nomGroupe"),resultat.getInt("groupeId"));
+        String findGroupe = "select name from rectangles,Groupshapes where groupId = (?)";
+        findG = connexion.prepareStatement(findGroupe);
+        findG.setInt(1, groupeid);
+        findG.execute();
+        ResultSet resultat1 = findG.getResultSet();
+        if (resultat1.next()) {
+          r = rj.find(resultat1.getString("name"));
+          cs.add(r);
+        }
+        findGroupe = "select name from carres,Groupshapes where groupId = (?)";
+        findG = connexion.prepareStatement(findGroupe);
+        findG.setInt(1, groupeid);
+        findG.execute();
+        resultat1 = findG.getResultSet();
+        if (resultat1.next()) {
+          ca = caj.find(resultat1.getString("name"));
+          cs.add(ca);
+        }
+        findGroupe = "select name from cercles,Groupshapes where groupId = (?)";
+        findG = connexion.prepareStatement(findGroupe);
+        findG.setInt(1, groupeid);
+        findG.execute();
+        resultat1 = findG.getResultSet();
+        if (resultat1.next()) {
+          c = cj.find(resultat1.getString("name"));
+          cs.add(c);
+        }
+        findGroupe = "select name from Triangles,Groupshapes where groupId = (?)";
+        findG = connexion.prepareStatement(findGroupe);
+        findG.setInt(1, groupeid);
+        findG.execute();
+        resultat1 = findG.getResultSet();
+        if (resultat1.next()) {
+          tr  = trj.find(resultat1.getString("name"));
+          cs.add(tr);
+        }
+        connexion.close();
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    try {
+      if (findG != null) {
+        findG.close();
+      }
+    } catch (SQLException e1) {
+      e1.printStackTrace();
+    }
+    try {
+      if (find != null) {
+        find.close();
+      }
+    } catch (SQLException e2) {
+      e2.printStackTrace();
+    }
+    return cs;
+  }
 
   /**
    * methode pour mettre à jour un tuple GroupShapes.
@@ -211,10 +211,10 @@ public class GroupShapesJdbc implements Dao<GroupShapes> {
     } catch (SQLException e) {
       e.printStackTrace();
     }
-   try {
-     if (update != null) {
-       update.close();
-     }
+    try {
+      if (update != null) {
+        update.close();
+      }
     } catch (SQLException e) {
       e.printStackTrace();
     }
@@ -229,15 +229,15 @@ public class GroupShapesJdbc implements Dao<GroupShapes> {
   public void delete(GroupShapes obj) {
     connexion = Dao.getConnection();
     PreparedStatement delete = null;
-	PreparedStatement delete1 = null;
+    PreparedStatement delete1 = null;
     try {
       RectangleJdbc rj = new RectangleJdbc();
-      CarreJdbc caj= new CarreJdbc();
+      CarreJdbc caj = new CarreJdbc();
       CercleJdbc cj = new CercleJdbc();
       TriangleJdbc trj = new TriangleJdbc();
       for (Ishape p: obj.getShapes()) {
         if (p instanceof Rectangle) {
-          if(((Rectangle) p).getLength() == ((Rectangle) p).getWidth()) {
+          if (((Rectangle) p).getLength() == ((Rectangle) p).getWidth()) {
             caj.create((Carre) p);
           } else {
             rj.create((Rectangle) p);
@@ -249,7 +249,7 @@ public class GroupShapesJdbc implements Dao<GroupShapes> {
         if (p instanceof Triangle) { 
           trj.create((Triangle) p);
         }
-	  }
+      }
       final String deleteString = "Delete from groupshapes where groupeId = (?)";
       int groupeid = obj.getGroupId();
       delete = connexion.prepareStatement(deleteString);
@@ -276,18 +276,18 @@ public class GroupShapesJdbc implements Dao<GroupShapes> {
       e.printStackTrace();
     }
     try {
-      if (delete != null) {
-        delete.close();
+      if (delete1 != null) {
+        delete1.close();
       }
     } catch (SQLException e1) {
       e1.printStackTrace();
     }
     try {
-      if (delete1 != null) {
-        delete1.close();
+      if (delete != null) {
+        delete.close();
       }
     } catch (SQLException e2) {
       e2.printStackTrace();
     }
-  }	
+  }
 }

@@ -1,10 +1,6 @@
 package commande;
 
-import shape.Carre;
 import shape.Cercle;
-import shape.Rectangle;
-import shape.Shape;
-import shape.Triangle;
 
 /**
  * CommandMoveC classe.
@@ -13,39 +9,38 @@ import shape.Triangle;
  */
 public class CommandMoveC implements ICommand {
 
-	/**
-	   * attribut cercle.
-	   */
-	  private Cercle c;
+  /**
+   * attribut cercle.
+   */
+  private Cercle ce;
 
-	  /**
-	   * l'attribut de coordonnée x du deplacement.
-	   */
-	  private double x;
+  /**
+   * l'attribut de coordonnée x du deplacement.
+   */
+  private double x1;
 
-	  /**
-	   * l'attribut de coordonnée y du deplacement.
-	   */
-	  private double y;
+  /**
+   * l'attribut de coordonnée y du deplacement.
+   */
+  private double y1;
 
-	  /**
-	   * constructeur.
-	   * @param cAtt objet cercle.
-	   * @param xAtt coordonnée x du deplacement.
-	   * @param yAtt coordonnée y du deplacement.
-	   */
-	  public CommandMoveC(Cercle cAtt,double xAtt,double yAtt) {
-	    c = cAtt;
-	    x = xAtt;
-	    y = yAtt;
-	  }
+  /**
+   * constructeur.
+   * @param c1Att objet cercle.
+   * @param x1Att coordonnée x du deplacement.
+   * @param y1Att coordonnée y du deplacement.
+   */
+  public CommandMoveC(Cercle c1Att,double x1Att,double y1Att) {
+    ce = c1Att;
+    x1 = x1Att;
+    y1 = y1Att;
+  }
 
-	  /**
-	   * methode pour deplacer une cercle.
-	   */
-	  @Override
-	  public void execute() {
-	    // TODO Auto-generated method stub
-	    c.move(x, y);
-	}
+  /**
+   * methode pour deplacer une cercle.
+   */
+  @Override
+  public void execute() {
+    ce.move(x1, y1);
+  }
 }

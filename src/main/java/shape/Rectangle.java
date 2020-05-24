@@ -84,7 +84,7 @@ public class Rectangle extends Shape {
    * @return les caractéristiques
    */
   @Override
-  public String Affiche() {
+  public String affiche() {
 	Point point = this.getLeftTop();
     return this.getName()+" = Rectangle(point de reférence("+point.getX()+","
 	    +point.getY()+"),longueur="+this.getLength()+", largeur="+this.getWidth()+")";
