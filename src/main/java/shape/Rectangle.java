@@ -29,7 +29,7 @@ public class Rectangle extends Shape {
    * @param widthAtt la largeur du rectangle.
    * @param groupId le id du groupe du rectangle.
    */
-  public Rectangle(String nameRatt,Point pointR ,double lengthAtt,double widthAtt,int groupId) {
+  public Rectangle(String nameRatt,Point pointR,double lengthAtt,double widthAtt,int groupId) {
     super(nameRatt,groupId);
     this.leftTop = pointR;
     this.length = lengthAtt;
@@ -50,7 +50,7 @@ public class Rectangle extends Shape {
    */
   public void setLeftTop(Point leftTop) {
     this.leftTop = leftTop;
-   }
+  }
 
   /**
    * methode pour acceder la longueur.
@@ -75,8 +75,8 @@ public class Rectangle extends Shape {
    */
   @Override
   public void move(double x, double y) {
-	leftTop.setX(leftTop.getX()+x);
-	leftTop.setY(leftTop.getY()+y);
+    leftTop.setX(leftTop.getX() + x);
+    leftTop.setY(leftTop.getY() + y);
   }
 
   /**
@@ -85,8 +85,8 @@ public class Rectangle extends Shape {
    */
   @Override
   public String affiche() {
-	Point point = this.getLeftTop();
-    return this.getName()+" = Rectangle(point de reférence("+point.getX()+","
-	    +point.getY()+"),longueur="+this.getLength()+", largeur="+this.getWidth()+")";
+    Point point = this.getLeftTop();
+    return this.getName() + " = Rectangle(point de reférence(" + point.getX() + ","
+        + point.getY() + "),longueur=" + this.getLength() + ", largeur=" + this.getWidth() + ")";
   }
 }

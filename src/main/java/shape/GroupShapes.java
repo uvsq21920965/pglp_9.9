@@ -23,11 +23,10 @@ public class GroupShapes extends Shape implements Ishape {
   /**
    * Constructeur.
    * @param nameGatt nom du groupe.
-   * @param pointGatt point du reference du groupe.
    * @param idGatt id du groupe.
    */
   public GroupShapes(String nameGatt, int idGatt) {
-	super(nameGatt,idGatt);
+    super(nameGatt,idGatt);
     nameG = nameGatt;
     idG = idGatt;
     shapes = new ArrayList<Ishape>();
@@ -78,7 +77,7 @@ public class GroupShapes extends Shape implements Ishape {
    * @param shape la forme à ajouter .
    */
   public void add(Ishape shape) {
-	this.getShapes().add(shape);
+    this.getShapes().add(shape);
   }
 
   /**
@@ -92,6 +91,7 @@ public class GroupShapes extends Shape implements Ishape {
       System.out.println("element non trouvé");
     }
   }
+
   /**
    * methode pour déplacer le groupe des formes.
    * @param x coordonnée x du deplacement.
@@ -114,7 +114,7 @@ public class GroupShapes extends Shape implements Ishape {
     for (Ishape shape : shapes) {
       affiche.append(" ");
       affiche.append(shape.affiche());
-	}
-    return " Groupe " +this.getNameG()+": " + affiche;
+    }
+    return " Groupe " + this.getNameG() + ": " + affiche;
   }
 }

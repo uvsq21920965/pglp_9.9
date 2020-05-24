@@ -1,34 +1,40 @@
 package shape;
 
-public class Triangle extends Shape{
+/**
+ * Classe triangle.
+ * @author sarra Belmahdi.
+ *
+ */
+public class Triangle extends Shape {
 
   /**
    * la base du triangle.
    */
-	  private double base;
+  private double base;
 
   /**
-   * la hauteur du triangle;
+   * la hauteur du triangle .
    */
   private double height;
+
   /**
    * le point sommet du triangle.
    */
-   private Point top;
+  private Point top;
 
   /**
    * constructeur.
-   * @param nameRatt nom du triangle.
+   * @param nameT nom du triangle.
    * @param pointT point de reference.
-   * @param lengthAtt la longueur du triangle.
-   * @param widthAtt la largeur du triangle.
+   * @param baseAtt la longueur du triangle.
+   * @param heightAtt la largeur du triangle.
    * @param groupId le id du groupe du triangle.
    */
-  public Triangle(String nameT,Point pointT ,double baseAtt,double heightAtt,int groupId) {
+  public Triangle(String nameT,Point pointT,double baseAtt,double heightAtt,int groupId) {
     super(nameT,groupId);
     base = baseAtt;
-    height= heightAtt;
-    top=pointT;
+    height = heightAtt;
+    top = pointT;
   }
 
   /**
@@ -70,8 +76,8 @@ public class Triangle extends Shape{
    */
   @Override
   public void move(double x, double y) {
-    top.setX(top.getX()+x);
-	top.setY(top.getY()+y);
+    top.setX(top.getX() + x);
+    top.setY(top.getY() + y);
   }
 
   /**
@@ -81,7 +87,7 @@ public class Triangle extends Shape{
   @Override
   public String affiche() {
     Point point = this.getTop();
-      return this.getName()+" = Triangle(Sommet("+point.getX()+","
-        +point.getY()+"),base="+this.getBase()+", hauteur="+this.getHeight()+")";
-	  }
+    return this.getName() + " = Triangle(Sommet(" + point.getX() + ","
+        + point.getY() + "),base=" + this.getBase() + ", hauteur=" + this.getHeight() + ")";
+  }
 }

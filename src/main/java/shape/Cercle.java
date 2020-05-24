@@ -1,6 +1,6 @@
-package shape;;
+package shape;
 
-public class Cercle extends Shape{
+public class Cercle extends Shape {
 
   /**
    * le rayon du cecle.
@@ -19,7 +19,7 @@ public class Cercle extends Shape{
    * @param radiusAtt rayon du cerle.
    * @param groupId le id du groupe du cercle.
    */
-  public Cercle(String nameCatt,Point pointC ,double radiusAtt,int groupId) {
+  public Cercle(String nameCatt,Point pointC,double radiusAtt,int groupId) {
     super(nameCatt,groupId);
     radius = radiusAtt;
     centre = pointC;
@@ -51,7 +51,7 @@ public class Cercle extends Shape{
 
   /**
    * methode pour modifier le centre.
-   * @param redius nouveau centre.
+   * @param centre nouveau centre.
    */
   public void setCentre(Point centre) {
     this.centre = centre;
@@ -64,8 +64,8 @@ public class Cercle extends Shape{
   */
   @Override
   public void move(double x, double y) {
-    centre.setX(centre.getX()+x);
-	centre.setY(centre.getY()+y);
+    centre.setX(centre.getX() + x);
+    centre.setY(centre.getY() + y);
   }
  
   /**
@@ -74,8 +74,8 @@ public class Cercle extends Shape{
    */
   @Override
   public String affiche() {
-  Point point = this.getCentre();
-  return this.getName()+" = Cercle((centre("+point.getX()+","
-      +point.getY()+"),rayon="+this.getRadius()+")";
+    Point point = this.getCentre();
+    return this.getName() + " = Cercle((centre(" + point.getX() + ","
+        + point.getY() + "),rayon=" + this.getRadius() + ")";
   }
 }

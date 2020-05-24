@@ -5,7 +5,7 @@ package shape;
  * @author Sarra Belmahdi.
  *
  */
-public abstract class Shape implements Ishape{
+public abstract class Shape implements Ishape {
 
   /**
    * le nom de la forme.
@@ -16,6 +16,7 @@ public abstract class Shape implements Ishape{
    * id du groupe.
    */
   private int groupId;
+
   /**
    * constructeur.
    * @param nameAtt le nom e la forme.
@@ -53,16 +54,16 @@ public abstract class Shape implements Ishape{
    * @return id groupe de la forme.
    */
   public int getGroupId() {
-		return groupId;
-	}
+    return groupId;
+  }
 
   /**
    * methode pour modifier le id du groupe de la forme.
    * @param groupId1 le nouveau id groupe  de la forme.
    */
   public void setGroupId(int groupId1) {
-		this.groupId = groupId1;
-	}
+    this.groupId = groupId1;
+  }
 
   /**
    * methode pour afficher les caractéristiques de la forme.

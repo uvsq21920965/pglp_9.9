@@ -10,13 +10,13 @@ public class Carre extends Rectangle {
   /**
    * constructeur.
    * @param nameCarre le nom du carrée. 
-   * @param pointR point de reference.
-   * @param side le coté du carrée.
+   * @param pointCa point de reference.
+   * @param sideAtt le coté du carrée.
    * @param groupId le id du groupe du caree.
    */
   public Carre(String nameCarre,Point pointCa, double sideAtt,int groupId) {
     super(nameCarre, pointCa, sideAtt, sideAtt,groupId);
-    side=sideAtt;
+    side = sideAtt;
   }
  
   /**
@@ -33,9 +33,9 @@ public class Carre extends Rectangle {
    */
   @Override
   public String affiche() {
-	Point point = this.getLeftTop();
-    return this.getName()+" = Carre( point de reférence("+point.getX()+","
-	    +point.getY()+"),coté = "+this.getSide()+")";
+    Point point = this.getLeftTop();
+    return this.getName() + " = Carre( point de reférence(" + point.getX() + ","
+        + point.getY() + "),coté = " + this.getSide() + ")";
   }
 
 }

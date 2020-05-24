@@ -1,13 +1,38 @@
 package drawing;
 
+import commande.CommadCreateGroup;
+import commande.Command;
+import commande.CommandAffiche;
+import commande.CommandAfficheGroup;
+import commande.CommandCreate;
+import commande.CommandCreateC;
+import commande.CommandCreateCa;
+import commande.CommandCreateRe;
+import commande.CommandCreateT;
+import commande.CommandExit;
+import commande.CommandLoad;
+import commande.CommandMoveC;
+import commande.CommandMoveCa;
+import commande.CommandMoveGroup;
+import commande.CommandMoveRe;
+import commande.CommandMoveT;
+import commande.CommandSave;
+import commande.ICommand;
+import commande.ICommandAffiche;
+import dao.Dao;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import commande.*;
-import dao.Dao;
-import shape.*;
+import shape.Carre;
+import shape.Cercle;
+import shape.GroupShapes;
+import shape.Ishape;
+import shape.Point;
+import shape.Rectangle;
+import shape.Shape;
+import shape.Triangle;
 
 
 /**
@@ -63,8 +88,8 @@ public class DrawingTui {
    * @return la forme.
    */
   public Shape findShape(String name) {
-    for(Shape forme: formes) {
-      if(forme.getName().contentEquals(name)) {
+    for (Shape forme: formes) {
+      if (forme.getName().contentEquals(name)) {
         return forme;
       }
     }
@@ -78,8 +103,8 @@ public class DrawingTui {
    * @return le groupe.
    */
   public GroupShapes findGroup(String name) {
-    for(GroupShapes groupe: groupes) {
-      if(groupe.getName().equals(name)) {
+    for (GroupShapes groupe: groupes) {
+      if (groupe.getName().equals(name)) {
         return groupe;
       }
     }
@@ -94,14 +119,14 @@ public class DrawingTui {
    */
   public void createGroupe(int idG,Shape shape) {
     Boolean existeG = false;
-    for(GroupShapes groupe: groupes) {
-      if(((Integer)groupe.getGroupId()).equals((Integer)idG)) {
+    for (GroupShapes groupe: groupes) {
+      if (((Integer)groupe.getGroupId()).equals((Integer)idG)) {
         groupe.add(shape);
         existeG = true;
       }      
-	}
-    if(existeG.equals(false)) {
-      CommadCreateGroup command = new CommadCreateGroup("g"+idG,idG);
+    }
+    if (existeG.equals(false)) {
+      CommadCreateGroup command = new CommadCreateGroup("g" + idG,idG);
       GroupShapes groupe = command.execute();
       groupes.add(groupe);
       groupe.add(shape);
@@ -116,27 +141,27 @@ public class DrawingTui {
    * @return la commande de  déplacement.
    */
   public Command whichFormeMove(Shape shape,double x,double y) {
-    if(shape instanceof Carre) {
+    if (shape instanceof Carre) {
       return new CommandMoveCa(((Carre)shape),x,y);
     }
-    if(shape instanceof Cercle) {
-        return new CommandMoveC(((Cercle)shape),x,y);
-      }
-    if(shape instanceof Rectangle) {
-        return new CommandMoveRe(((Rectangle)shape),x,y);
+    if (shape instanceof Cercle) {
+      return new CommandMoveC(((Cercle)shape),x,y);
     }
-    if(shape instanceof Triangle) {
-        return new CommandMoveT(((Triangle)shape),x,y);
+    if (shape instanceof Rectangle) {
+      return new CommandMoveRe(((Rectangle)shape),x,y);
     }
-    return null;	
-}
+    if (shape instanceof Triangle) {
+      return new CommandMoveT(((Triangle)shape),x,y);
+    }
+    return null;
+  }
  
   /**
    * methode pour sauvegarder un dessin.
    * @return commandSave.
    */
   public Command saveGroups(GroupShapes gs) {
-	CommandSave cs = new CommandSave(gs);
+    CommandSave cs = new CommandSave(gs);
     cs.execute();
     return cs;
   }
@@ -148,20 +173,20 @@ public class DrawingTui {
    */
   public Command loadGroups(GroupShapes groupe) {
    
-    for(Ishape shape : groupe.getShapes()) {
-      if(shape instanceof Shape && groupe.getIdG() == ((Shape) shape).getGroupId()){
+    for (Ishape shape : groupe.getShapes()) {
+      if (shape instanceof Shape && groupe.getIdG() == ((Shape) shape).getGroupId()) {
         formes.remove((Shape)shape);
       }
     }
     groupes.remove(groupe);
-    CommandLoad cl= new CommandLoad(String.valueOf(groupe.getIdG()));
+    CommandLoad cl = new CommandLoad(String.valueOf(groupe.getIdG()));
     GroupShapes gs = cl.execute();
     groupes.add(gs);
-    for(Ishape shape : gs.getShapes()) {
-        if(shape instanceof Shape) {
-          formes.add((Shape)shape);
-        }
+    for (Ishape shape : gs.getShapes()) {
+      if (shape instanceof Shape) {
+        formes.add((Shape)shape);
       }
+    }
     return cl;
   }
 
@@ -176,13 +201,13 @@ public class DrawingTui {
     String[] textUser = userCommande.split("\\s+");
     Command command = null;
     String nextCommande = textUser[0].toLowerCase();
-	Shape shape = null;
+    Shape shape = null;
     try {
-      switch(nextCommande) {
+      switch (nextCommande) {
         case "move":
           shape = findShape(textUser[1]);
           double x1 = Double.parseDouble(textUser[2]);
-      	  double y1 = Double.parseDouble(textUser[3]);
+          double y1 = Double.parseDouble(textUser[3]);
           command = this.whichFormeMove(shape,x1,y1);
           ((ICommand)command).execute();
           break;
@@ -198,7 +223,7 @@ public class DrawingTui {
           double y2 = Double.parseDouble(textUser[3]);
           command = new CommandMoveGroup(shapeG,x2,y2);
           ((ICommand)command).execute();
-           break;
+          break;
         case "affichegroupe":
           GroupShapes shapeG1 = findGroup(textUser[1]);
           command = new CommandAfficheGroup(shapeG1);
@@ -207,7 +232,7 @@ public class DrawingTui {
           break;
         case "afficheall":
           String affiche2 = afficheAllDessins();
-          if(this.getUserShapes().size()>=1) {
+          if (this.getUserShapes().size() >= 1) {
             System.out.println("vos dessins actuels sont:");
             System.out.println(affiche2);
           }
@@ -223,50 +248,50 @@ public class DrawingTui {
           System.out.println("votre dessin a éte chargé");
           break;
         case "exit":
-    	  command = new CommandExit();
-    	  ((ICommand)command).execute();
+          command = new CommandExit();
+          ((ICommand)command).execute();
           break;
         default:
           double x3 = Double.parseDouble(textUser[2]);
           double y3 = Double.parseDouble(textUser[3]);
           Point point = new Point(x3,y3);
           int groupId;
-    	  nextCommande = textUser[1].toLowerCase();
-    	  switch(nextCommande) {
+          nextCommande = textUser[1].toLowerCase();
+          switch (nextCommande) {
             case "cercle":
-        	  groupId = Integer.parseInt(textUser[5]);
-        	  double radius = Double.parseDouble(textUser[4]);
-        	  command = new CommandCreateC(textUser[0],point,radius,groupId);
-        	  shape = ((CommandCreate<Cercle>)command).execute();
-    	      formes.add((Cercle)shape);
-    	      createGroupe(groupId,(Cercle)shape);
-    	      break;
+              groupId = Integer.parseInt(textUser[5]);
+              double radius = Double.parseDouble(textUser[4]);
+              command = new CommandCreateC(textUser[0],point,radius,groupId);
+              shape = ((CommandCreate<Cercle>)command).execute();
+              formes.add((Cercle)shape);
+              createGroupe(groupId,(Cercle)shape);
+              break;
             case "carre":
-          	  groupId = Integer.parseInt(textUser[5]);
-          	  double side = Double.parseDouble(textUser[4]);
-          	  command = new CommandCreateCa(textUser[0],point,side,groupId);
-          	  shape = ((CommandCreate<Carre>)command).execute();
-  	          formes.add((Carre)shape);
-  	          createGroupe(groupId,(Carre)shape);
-    	      break;
+              groupId = Integer.parseInt(textUser[5]);
+              double side = Double.parseDouble(textUser[4]);
+              command = new CommandCreateCa(textUser[0],point,side,groupId);
+              shape = ((CommandCreate<Carre>)command).execute();
+              formes.add((Carre)shape);
+              createGroupe(groupId,(Carre)shape);
+              break;
             case "triangle":
-        	  groupId = Integer.parseInt(textUser[6]);
+              groupId = Integer.parseInt(textUser[6]);
               double base = Double.parseDouble(textUser[4]);
               double height = Double.parseDouble(textUser[5]);
               command = new CommandCreateT(textUser[0],point,base,height,groupId);
-        	  shape = ((CommandCreate<Triangle>)command).execute();
-    	      formes.add((Triangle)shape);
-    	      createGroupe(groupId,(Triangle)shape);
-    	      break;
+              shape = ((CommandCreate<Triangle>)command).execute();
+              formes.add((Triangle)shape);
+              createGroupe(groupId,(Triangle)shape);
+              break;
             case "rectangle":
-        	  groupId = Integer.parseInt(textUser[6]);
+              groupId = Integer.parseInt(textUser[6]);
               double length = Double.parseDouble(textUser[4]);
               double width = Double.parseDouble(textUser[5]);
               command = new CommandCreateRe(textUser[0],point,length,width,groupId);
               shape = ((CommandCreate<Rectangle>)command).execute();
-    	      formes.add((Rectangle)shape);
-    	      createGroupe(groupId,(Rectangle)shape);
-    	      break;
+              formes.add((Rectangle)shape);
+              createGroupe(groupId,(Rectangle)shape);
+              break;
             default:
               System.out.println("forme invalide");
               command = null;
@@ -285,52 +310,53 @@ public class DrawingTui {
    * @return le dessin textuel.
    */
   public String afficheDessin(Shape shape) {
-    if(shape instanceof Cercle) {
+    if (shape instanceof Cercle) {
       return ((Cercle)shape).affiche();
     }
 
-    if(shape instanceof Rectangle) {
-      if(((Rectangle) shape).getLength() == ((Rectangle) shape).getWidth()) {
-        return((Carre)shape).affiche();  
+    if (shape instanceof Rectangle) {
+      if (((Rectangle) shape).getLength() == ((Rectangle) shape).getWidth()) {
+        return ((Carre)shape).affiche();  
       } else {
-        return((Rectangle)shape).affiche();
+        return ((Rectangle)shape).affiche();
       }
-  	}
+    }
 
-    if(shape instanceof Triangle) {
+    if (shape instanceof Triangle) {
       return ((Triangle)shape).affiche();
     }
 
-    if(shape instanceof GroupShapes) {
+    if (shape instanceof GroupShapes) {
       return ((GroupShapes)shape).affiche();
     }
-    return null;	
+    return null;
   }
+
   /**
    * methode pour afficher les formes actuelles dessinées.
    * @return
    */
   public String afficheAllDessins() {
-	StringBuffer affiche = new StringBuffer();
-    for(Shape shape : this.getUserShapes()) {
+    StringBuffer affiche = new StringBuffer();
+    for (Shape shape : this.getUserShapes()) {
       affiche.append(this.afficheDessin(shape));
       affiche.append("\n");
     }
-    return affiche+"";
+    return affiche + "";
   }
 
   /**
    * méthode pour supprimer la table dand base de données à chaque utilisation.
-   * @param nameTble le nom de la table à supprimer.
+   * @param nameTable le nom de la table à supprimer.
    */
   public void deleteTables(String nameTable) {
     Connection connexion = Dao.getConnection();
-    String deleteTableString = "delete from "+nameTable;
+    String deleteTableString = "delete from " + nameTable;
     try {
       connexion.createStatement().execute(deleteTableString);
       connexion.close();
     } catch (SQLException e1) {
       e1.printStackTrace();
-	} 
+    }
   }
 }
