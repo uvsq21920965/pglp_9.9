@@ -47,6 +47,9 @@ public class DrawingTuiTest {
     assertTrue(x.equals(0.0));
     assertTrue(y.equals(0.0));
     assertTrue(rayon.equals(50.0));
+    userCommande = "affiche c1";
+    commande = dt.nextCommand(userCommande);
+    assertTrue( commande instanceof CommandAffiche);
     userCommande = "move(c1,10,50)";
     commande = dt.nextCommand(userCommande);
     assertTrue( commande instanceof CommandMoveC);

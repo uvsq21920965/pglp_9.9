@@ -155,7 +155,7 @@ public class DrawingTui {
    */
   @SuppressWarnings("unchecked")
   public Command nextCommand(String userCommande) {
-  	userCommande = userCommande.replaceAll("[=)(,]"," ");
+    userCommande = userCommande.replaceAll("[=)(,]"," ");
     String[] textUser = userCommande.split("\\s+");
     Command command = null;
     String nextCommande = textUser[0].toLowerCase();
@@ -169,10 +169,11 @@ public class DrawingTui {
           command = this.whichFormeMove(shape,x1,y1);
           ((ICommand)command).execute();
           break;
-        case"affiche":
+        case "affiche":
           shape = findShape(textUser[1]);
           command = new CommandAffiche(shape);
-          System.out.println(((ICommandAffiche)command).execute());
+          String affiche = ((ICommandAffiche)command).execute();
+          System.out.println(affiche);
           break;
         case "movegroupe":
           GroupShapes shapeG = findGroup(textUser[1]);
@@ -184,16 +185,30 @@ public class DrawingTui {
         case "affichegroupe":
           GroupShapes shapeG1 = findGroup(textUser[1]);
           command = new CommandAfficheGroup(shapeG1);
-          System.out.println(((ICommandAffiche)command).execute());
+          String affiche1 = ((ICommandAffiche)command).execute();
+          System.out.println(affiche1);
+          break;
+        case "afficheall":
+          String affiche2 = afficheAllDessins();
+          if(affiche2.equals(null)) {
+            System.out.println("vous avez dessiné aucune forme géométrique");
+          } else {
+            if(this.getUserShapes().size()>=1) {
+              System.out.println("vos dessins actuels sont:");
+  		      System.out.println(affiche2);
+            }
+          }
           break;
         case "save":
           GroupShapes shapeG2 = findGroup(textUser[1]);
           command = saveGroups(shapeG2);
+          System.out.println(command.equals(null));
           System.out.println("votre dessin a éte sauvgardé");
         case "load":
-        	String shapeG3 = textUser[1];
-        	command = loadGroups(shapeG3);
-        	System.out.println("votre dessin a éte chargé");
+          String shapeG3 = textUser[1];
+          command = loadGroups(shapeG3);
+          System.out.println(command.equals(null));
+          System.out.println("votre dessin a éte chargé");
         case "exit":
     	  command = new CommandExit();
     	  ((ICommand)command).execute();

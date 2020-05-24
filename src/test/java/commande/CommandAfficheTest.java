@@ -6,11 +6,12 @@ import org.junit.Test;
 
 import shape.Cercle;
 import shape.Point;
+import shape.Shape;
 
 public class CommandAfficheTest {
 
 	Point point = new Point(5.2,7);
-	Cercle c1 =new Cercle("c1",point,5,1);
+	Shape c1 =new Cercle("c1",point,5,1);
 	CommandAffiche ma = new CommandAffiche(c1);
   @Test
   public void executeTest() {
