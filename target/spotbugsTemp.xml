@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.0.0" sequence="0" timestamp="1590356748000" analysisTimestamp="1590356782393" release="">
+  <Project projectName="pglp_9.9">
+    <Jar>/home/oem/git/pglp_9.9/target/classes</Jar>
+    <AuxClasspathEntry>/home/oem/.m2/repository/com/github/stefanbirkner/system-rules/1.3.0/system-rules-1.3.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/oem/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar</AuxClasspathEntry>
+  </Project>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL" instanceHash="7091f325011d2c59dc194838bee99906" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method may fail to clean up stream or resource</ShortMessage>
+    <LongMessage>dao.GroupShapesJdbc.delete(GroupShapes) may fail to clean up java.sql.Statement</LongMessage>
+    <Class classname="dao.GroupShapesJdbc" primary="true">
+      <SourceLine classname="dao.GroupShapesJdbc" start="1" end="292" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java">
+        <Message>At GroupShapesJdbc.java:[lines 1-292]</Message>
+      </SourceLine>
+      <Message>In class dao.GroupShapesJdbc</Message>
+    </Class>
+    <Method classname="dao.GroupShapesJdbc" name="delete" signature="(Lshape/GroupShapes;)V" isStatic="false" primary="true">
+      <SourceLine classname="dao.GroupShapesJdbc" start="230" end="292" startBytecode="0" endBytecode="961" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java"/>
+      <Message>In method dao.GroupShapesJdbc.delete(GroupShapes)</Message>
+    </Method>
+    <Class classname="java.sql.Statement" role="CLASS_REFTYPE">
+      <SourceLine classname="java.sql.Statement" start="1092" end="1368" sourcefile="Statement.java" sourcepath="java/sql/Statement.java">
+        <Message>At Statement.java:[lines 1092-1368]</Message>
+      </SourceLine>
+      <Message>Reference type java.sql.Statement</Message>
+    </Class>
+    <Int value="3" role="INT_OBLIGATIONS_REMAINING">
+      <Message>3 instances of obligation remaining</Message>
+    </Int>
+    <SourceLine classname="dao.GroupShapesJdbc" primary="true" start="255" end="255" startBytecode="192" endBytecode="192" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at GroupShapesJdbc.java:[line 255] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="256" end="256" startBytecode="198" endBytecode="198" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 256]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="257" end="257" startBytecode="207" endBytecode="207" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 257]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="258" end="258" startBytecode="214" endBytecode="214" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 258]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="259" end="259" startBytecode="219" endBytecode="219" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 259]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="259" end="259" startBytecode="225" endBytecode="225" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at GroupShapesJdbc.java:[line 259] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="260" end="260" startBytecode="231" endBytecode="231" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 260]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="261" end="261" startBytecode="240" endBytecode="240" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 261]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="262" end="262" startBytecode="247" endBytecode="247" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 262]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="263" end="263" startBytecode="252" endBytecode="252" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 263]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="263" end="263" startBytecode="258" endBytecode="258" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at GroupShapesJdbc.java:[line 263] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="264" end="264" startBytecode="264" endBytecode="264" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 264]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="265" end="265" startBytecode="273" endBytecode="273" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 265]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="266" end="266" startBytecode="280" endBytecode="280" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 266]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="267" end="267" startBytecode="285" endBytecode="285" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 267]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="267" end="267" startBytecode="291" endBytecode="291" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at GroupShapesJdbc.java:[line 267] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="268" end="268" startBytecode="297" endBytecode="297" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 268]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="269" end="269" startBytecode="306" endBytecode="306" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 269]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="270" end="270" startBytecode="313" endBytecode="313" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 270]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="271" end="271" startBytecode="318" endBytecode="318" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 271]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="271" end="271" startBytecode="324" endBytecode="324" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at GroupShapesJdbc.java:[line 271] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="272" end="272" startBytecode="330" endBytecode="330" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 272]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="273" end="273" startBytecode="339" endBytecode="339" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 273]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="274" end="274" startBytecode="346" endBytecode="346" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 274]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="275" end="275" startBytecode="355" endBytecode="355" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 275]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="279" end="279" startBytecode="365" endBytecode="365" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 279]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="286" end="286" startBytecode="385" endBytecode="385" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 286]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="292" end="292" startBytecode="405" endBytecode="405" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 292]</Message>
+    </SourceLine>
+    <String value="{Statement x 3}" role="STRING_REMAINING_OBLIGATIONS">
+      <Message>Remaining obligations: {Statement x 3}</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL" instanceHash="141675e4ea3d7866545cc57647bb9879" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method may fail to clean up stream or resource</ShortMessage>
+    <LongMessage>dao.GroupShapesJdbc.find(String) may fail to clean up java.sql.Statement</LongMessage>
+    <Class classname="dao.GroupShapesJdbc" primary="true">
+      <SourceLine classname="dao.GroupShapesJdbc" start="1" end="292" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java">
+        <Message>At GroupShapesJdbc.java:[lines 1-292]</Message>
+      </SourceLine>
+      <Message>In class dao.GroupShapesJdbc</Message>
+    </Class>
+    <Method classname="dao.GroupShapesJdbc" name="find" signature="(Ljava/lang/String;)Lshape/GroupShapes;" isStatic="false" primary="true">
+      <SourceLine classname="dao.GroupShapesJdbc" start="115" end="191" startBytecode="0" endBytecode="1150" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java"/>
+      <Message>In method dao.GroupShapesJdbc.find(String)</Message>
+    </Method>
+    <Class classname="java.sql.Statement" role="CLASS_REFTYPE">
+      <SourceLine classname="java.sql.Statement" start="1092" end="1368" sourcefile="Statement.java" sourcepath="java/sql/Statement.java">
+        <Message>At Statement.java:[lines 1092-1368]</Message>
+      </SourceLine>
+      <Message>Reference type java.sql.Statement</Message>
+    </Class>
+    <Int value="3" role="INT_OBLIGATIONS_REMAINING">
+      <Message>3 instances of obligation remaining</Message>
+    </Int>
+    <SourceLine classname="dao.GroupShapesJdbc" primary="true" start="130" end="130" startBytecode="77" endBytecode="77" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at GroupShapesJdbc.java:[line 130] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="131" end="131" startBytecode="84" endBytecode="84" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 131]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="132" end="132" startBytecode="93" endBytecode="93" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 132]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="133" end="133" startBytecode="101" endBytecode="101" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 133]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="134" end="134" startBytecode="110" endBytecode="110" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 134]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="135" end="135" startBytecode="120" endBytecode="120" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 135]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="136" end="136" startBytecode="147" endBytecode="147" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 136]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="137" end="137" startBytecode="151" endBytecode="151" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 137]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="137" end="137" startBytecode="157" endBytecode="157" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at GroupShapesJdbc.java:[line 137] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="138" end="138" startBytecode="164" endBytecode="164" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 138]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="139" end="139" startBytecode="173" endBytecode="173" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 139]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="140" end="140" startBytecode="181" endBytecode="181" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 140]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="141" end="141" startBytecode="190" endBytecode="190" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 141]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="145" end="145" startBytecode="223" endBytecode="223" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 145]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="146" end="146" startBytecode="227" endBytecode="227" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 146]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="146" end="146" startBytecode="233" endBytecode="233" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at GroupShapesJdbc.java:[line 146] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="147" end="147" startBytecode="240" endBytecode="240" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 147]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="148" end="148" startBytecode="249" endBytecode="249" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 148]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="149" end="149" startBytecode="257" endBytecode="257" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 149]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="150" end="150" startBytecode="266" endBytecode="266" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 150]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="154" end="154" startBytecode="299" endBytecode="299" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 154]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="155" end="155" startBytecode="303" endBytecode="303" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 155]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="155" end="155" startBytecode="309" endBytecode="309" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at GroupShapesJdbc.java:[line 155] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="156" end="156" startBytecode="316" endBytecode="316" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 156]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="157" end="157" startBytecode="325" endBytecode="325" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 157]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="158" end="158" startBytecode="333" endBytecode="333" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 158]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="159" end="159" startBytecode="342" endBytecode="342" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 159]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="163" end="163" startBytecode="375" endBytecode="375" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 163]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="164" end="164" startBytecode="379" endBytecode="379" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 164]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="164" end="164" startBytecode="385" endBytecode="385" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at GroupShapesJdbc.java:[line 164] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="165" end="165" startBytecode="392" endBytecode="392" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 165]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="166" end="166" startBytecode="401" endBytecode="401" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 166]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="167" end="167" startBytecode="409" endBytecode="409" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 167]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="168" end="168" startBytecode="418" endBytecode="418" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 168]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="172" end="172" startBytecode="451" endBytecode="451" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 172]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="174" end="174" startBytecode="460" endBytecode="460" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 174]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="178" end="178" startBytecode="470" endBytecode="470" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 178]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="185" end="185" startBytecode="492" endBytecode="492" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 185]</Message>
+    </SourceLine>
+    <SourceLine classname="dao.GroupShapesJdbc" start="191" end="191" startBytecode="514" endBytecode="514" sourcefile="GroupShapesJdbc.java" sourcepath="dao/GroupShapesJdbc.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at GroupShapesJdbc.java:[line 191]</Message>
+    </SourceLine>
+    <String value="{Statement x 3}" role="STRING_REMAINING_OBLIGATIONS">
+      <Message>Remaining obligations: {Statement x 3}</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL" instanceHash="3064825f2d4b4a43e545a232665e941d" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method may fail to clean up stream or resource</ShortMessage>
+    <LongMessage>drawing.DrawingTui.deleteTables(String) may fail to clean up java.sql.Statement</LongMessage>
+    <Class classname="drawing.DrawingTui" primary="true">
+      <SourceLine classname="drawing.DrawingTui" start="58" end="361" sourcefile="DrawingTui.java" sourcepath="drawing/DrawingTui.java">
+        <Message>At DrawingTui.java:[lines 58-361]</Message>
+      </SourceLine>
+      <Message>In class drawing.DrawingTui</Message>
+    </Class>
+    <Method classname="drawing.DrawingTui" name="deleteTables" signature="(Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="drawing.DrawingTui" start="353" end="361" startBytecode="0" endBytecode="196" sourcefile="DrawingTui.java" sourcepath="drawing/DrawingTui.java"/>
+      <Message>In method drawing.DrawingTui.deleteTables(String)</Message>
+    </Method>
+    <Class classname="java.sql.Statement" role="CLASS_REFTYPE">
+      <SourceLine classname="java.sql.Statement" start="1092" end="1368" sourcefile="Statement.java" sourcepath="java/sql/Statement.java">
+        <Message>At Statement.java:[lines 1092-1368]</Message>
+      </SourceLine>
+      <Message>Reference type java.sql.Statement</Message>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING">
+      <Message>1 instances of obligation remaining</Message>
+    </Int>
+    <SourceLine classname="drawing.DrawingTui" primary="true" start="356" end="356" startBytecode="23" endBytecode="23" sourcefile="DrawingTui.java" sourcepath="drawing/DrawingTui.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at DrawingTui.java:[line 356] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="drawing.DrawingTui" start="357" end="357" startBytecode="35" endBytecode="35" sourcefile="DrawingTui.java" sourcepath="drawing/DrawingTui.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at DrawingTui.java:[line 357]</Message>
+    </SourceLine>
+    <SourceLine classname="drawing.DrawingTui" start="358" end="358" startBytecode="41" endBytecode="41" sourcefile="DrawingTui.java" sourcepath="drawing/DrawingTui.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at DrawingTui.java:[line 358]</Message>
+    </SourceLine>
+    <SourceLine classname="drawing.DrawingTui" start="361" end="361" startBytecode="51" endBytecode="51" sourcefile="DrawingTui.java" sourcepath="drawing/DrawingTui.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at DrawingTui.java:[line 361]</Message>
+    </SourceLine>
+    <String value="{Statement x 1}" role="STRING_REMAINING_OBLIGATIONS">
+      <Message>Remaining obligations: {Statement x 1}</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="ODR_OPEN_DATABASE_RESOURCE" priority="2" rank="16" abbrev="ODR" category="BAD_PRACTICE" instanceHash="e85a95e6022d5c71252ba062dbbdc24" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method may fail to close database resource</ShortMessage>
+    <LongMessage>drawing.DrawingTui.deleteTables(String) may fail to close Statement</LongMessage>
+    <Class classname="drawing.DrawingTui" primary="true">
+      <SourceLine classname="drawing.DrawingTui" start="58" end="361" sourcefile="DrawingTui.java" sourcepath="drawing/DrawingTui.java">
+        <Message>At DrawingTui.java:[lines 58-361]</Message>
+      </SourceLine>
+      <Message>In class drawing.DrawingTui</Message>
+    </Class>
+    <Method classname="drawing.DrawingTui" name="deleteTables" signature="(Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="drawing.DrawingTui" start="353" end="361" startBytecode="0" endBytecode="21" sourcefile="DrawingTui.java" sourcepath="drawing/DrawingTui.java"/>
+      <Message>In method drawing.DrawingTui.deleteTables(String)</Message>
+    </Method>
+    <Type descriptor="Ljava/sql/Statement;" role="TYPE_CLOSEIT">
+      <SourceLine classname="java.sql.Statement" start="1092" end="1368" sourcefile="Statement.java" sourcepath="java/sql/Statement.java">
+        <Message>At Statement.java:[lines 1092-1368]</Message>
+      </SourceLine>
+      <Message>Need to close java.sql.Statement </Message>
+    </Type>
+    <SourceLine classname="drawing.DrawingTui" primary="true" start="356" end="356" startBytecode="23" endBytecode="23" sourcefile="DrawingTui.java" sourcepath="drawing/DrawingTui.java">
+      <Message>At DrawingTui.java:[line 356]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="BAD_PRACTICE">
+    <Description>Bad practice</Description>
+  </BugCategory>
+  <BugCategory category="EXPERIMENTAL">
+    <Description>Experimental</Description>
+  </BugCategory>
+  <BugPattern type="ODR_OPEN_DATABASE_RESOURCE" abbrev="ODR" category="BAD_PRACTICE">
+    <ShortDescription>Method may fail to close database resource</ShortDescription>
+    <Details><![CDATA[
+
+<p> The method creates a database resource (such as a database connection
+or row set), does not assign it to any
+fields, pass it to other methods, or return it, and does not appear to close
+the object on all paths out of the method.&nbsp; Failure to
+close database resources on all paths out of a method may
+result in poor performance, and could cause the application to
+have problems communicating with the database.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="OBL_UNSATISFIED_OBLIGATION" abbrev="OBL" category="EXPERIMENTAL">
+    <ShortDescription>Method may fail to clean up stream or resource</ShortDescription>
+    <Details><![CDATA[
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          For sending feedback, check:
+          </p>
+          <ul>
+            <li><a href="https://github.com/spotbugs/spotbugs/blob/master/CONTRIBUTING.md">contributing guideline</a></li>
+            <li><a href="https://github.com/spotbugs/discuss/issues?q=">malinglist</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>, for
+          a description of the analysis technique.
+          </p>
+          
+      ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="OBL">
+    <Description>Unsatisfied obligation to clean up stream or resource</Description>
+  </BugCode>
+  <BugCode abbrev="ODR">
+    <Description>Database resource not closed on all paths</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sun, 24 May 2020 23:45:48 +0200" total_classes="35" referenced_classes="68" total_bugs="4" total_size="1270" num_packages="4" java_version="1.8.0_222" vm_version="25.222-b10" cpu_seconds="20.36" clock_seconds="5.70" peak_mbytes="190.01" alloc_mbytes="455.50" gc_seconds="0.09" priority_2="4">
+    <FileStats path="commande/CommadCreateGroup.java" bugCount="0" size="12"/>
+    <FileStats path="commande/Command.java" bugCount="0" size="1"/>
+    <FileStats path="commande/CommandAffiche.java" bugCount="0" size="16"/>
+    <FileStats path="commande/CommandAfficheGroup.java" bugCount="0" size="8"/>
+    <FileStats path="commande/CommandCreate.java" bugCount="0" size="2"/>
+    <FileStats path="commande/CommandCreateC.java" bugCount="0" size="16"/>
+    <FileStats path="commande/CommandCreateCa.java" bugCount="0" size="16"/>
+    <FileStats path="commande/CommandCreateRe.java" bugCount="0" size="18"/>
+    <FileStats path="commande/CommandCreateT.java" bugCount="0" size="18"/>
+    <FileStats path="commande/CommandExit.java" bugCount="0" size="6"/>
+    <FileStats path="commande/CommandLoad.java" bugCount="0" size="12"/>
+    <FileStats path="commande/CommandMoveC.java" bugCount="0" size="13"/>
+    <FileStats path="commande/CommandMoveCa.java" bugCount="0" size="13"/>
+    <FileStats path="commande/CommandMoveGroup.java" bugCount="0" size="13"/>
+    <FileStats path="commande/CommandMoveRe.java" bugCount="0" size="13"/>
+    <FileStats path="commande/CommandMoveT.java" bugCount="0" size="13"/>
+    <FileStats path="commande/CommandSave.java" bugCount="0" size="11"/>
+    <FileStats path="commande/ICommand.java" bugCount="0" size="2"/>
+    <FileStats path="commande/ICommandAffiche.java" bugCount="0" size="2"/>
+    <FileStats path="dao/CarreJdbc.java" bugCount="0" size="106"/>
+    <FileStats path="dao/CercleJdbc.java" bugCount="0" size="106"/>
+    <FileStats path="dao/Dao.java" bugCount="0" size="17"/>
+    <FileStats path="dao/GroupShapesJdbc.java" bugCount="2" size="191" bugHash="db78db07c6696460248334ee94ed5594"/>
+    <FileStats path="dao/RectangleJdbc.java" bugCount="0" size="109"/>
+    <FileStats path="dao/TriangleJdbc.java" bugCount="0" size="109"/>
+    <FileStats path="drawing/DrawingApp.java" bugCount="0" size="77"/>
+    <FileStats path="drawing/DrawingTui.java" bugCount="2" size="176" bugHash="c7d09e097e4bd63644036bba00c3ef88"/>
+    <FileStats path="shape/Carre.java" bugCount="0" size="12"/>
+    <FileStats path="shape/Cercle.java" bugCount="0" size="26"/>
+    <FileStats path="shape/GroupShapes.java" bugCount="0" size="41"/>
+    <FileStats path="shape/Ishape.java" bugCount="0" size="3"/>
+    <FileStats path="shape/Point.java" bugCount="0" size="18"/>
+    <FileStats path="shape/Rectangle.java" bugCount="0" size="27"/>
+    <FileStats path="shape/Shape.java" bugCount="0" size="20"/>
+    <FileStats path="shape/Triangle.java" bugCount="0" size="27"/>
+    <PackageStats package="commande" total_bugs="0" total_types="19" total_size="205">
+      <ClassStats class="commande.CommadCreateGroup" sourceFile="CommadCreateGroup.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="commande.Command" sourceFile="Command.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="commande.CommandAffiche" sourceFile="CommandAffiche.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="commande.CommandAfficheGroup" sourceFile="CommandAfficheGroup.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="commande.CommandCreate" sourceFile="CommandCreate.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="commande.CommandCreateC" sourceFile="CommandCreateC.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="commande.CommandCreateCa" sourceFile="CommandCreateCa.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="commande.CommandCreateRe" sourceFile="CommandCreateRe.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="commande.CommandCreateT" sourceFile="CommandCreateT.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="commande.CommandExit" sourceFile="CommandExit.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="commande.CommandLoad" sourceFile="CommandLoad.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="commande.CommandMoveC" sourceFile="CommandMoveC.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="commande.CommandMoveCa" sourceFile="CommandMoveCa.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="commande.CommandMoveGroup" sourceFile="CommandMoveGroup.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="commande.CommandMoveRe" sourceFile="CommandMoveRe.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="commande.CommandMoveT" sourceFile="CommandMoveT.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="commande.CommandSave" sourceFile="CommandSave.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="commande.ICommand" sourceFile="ICommand.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="commande.ICommandAffiche" sourceFile="ICommandAffiche.java" interface="true" size="2" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="dao" total_bugs="2" total_types="6" total_size="638" priority_2="2">
+      <ClassStats class="dao.CarreJdbc" sourceFile="CarreJdbc.java" interface="false" size="106" bugs="0"/>
+      <ClassStats class="dao.CercleJdbc" sourceFile="CercleJdbc.java" interface="false" size="106" bugs="0"/>
+      <ClassStats class="dao.Dao" sourceFile="Dao.java" interface="true" size="17" bugs="0"/>
+      <ClassStats class="dao.GroupShapesJdbc" sourceFile="GroupShapesJdbc.java" interface="false" size="191" bugs="2" priority_2="2"/>
+      <ClassStats class="dao.RectangleJdbc" sourceFile="RectangleJdbc.java" interface="false" size="109" bugs="0"/>
+      <ClassStats class="dao.TriangleJdbc" sourceFile="TriangleJdbc.java" interface="false" size="109" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="drawing" total_bugs="2" total_types="2" total_size="253" priority_2="2">
+      <ClassStats class="drawing.DrawingApp" sourceFile="DrawingApp.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="drawing.DrawingTui" sourceFile="DrawingTui.java" interface="false" size="176" bugs="2" priority_2="2"/>
+    </PackageStats>
+    <PackageStats package="shape" total_bugs="0" total_types="8" total_size="174">
+      <ClassStats class="shape.Carre" sourceFile="Carre.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="shape.Cercle" sourceFile="Cercle.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="shape.GroupShapes" sourceFile="GroupShapes.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="shape.Ishape" sourceFile="Ishape.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="shape.Point" sourceFile="Point.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="shape.Rectangle" sourceFile="Rectangle.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="shape.Shape" sourceFile="Shape.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="shape.Triangle" sourceFile="Triangle.java" interface="false" size="27" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="515" invocations="460" avgMicrosecondsPerInvocation="1121" maxMicrosecondsPerInvocation="37637" standardDeviationMicrosecondsPerInvocation="2960"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="317" invocations="168" avgMicrosecondsPerInvocation="1888" maxMicrosecondsPerInvocation="31225" standardDeviationMicrosecondsPerInvocation="3666"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="245" invocations="169" avgMicrosecondsPerInvocation="1450" maxMicrosecondsPerInvocation="14923" standardDeviationMicrosecondsPerInvocation="2307"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="242" invocations="116" avgMicrosecondsPerInvocation="2089" maxMicrosecondsPerInvocation="26273" standardDeviationMicrosecondsPerInvocation="3162"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="228" invocations="142" avgMicrosecondsPerInvocation="1609" maxMicrosecondsPerInvocation="24645" standardDeviationMicrosecondsPerInvocation="3009"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="176" invocations="142" avgMicrosecondsPerInvocation="1243" maxMicrosecondsPerInvocation="19968" standardDeviationMicrosecondsPerInvocation="2439"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="176" invocations="136" avgMicrosecondsPerInvocation="1294" maxMicrosecondsPerInvocation="16836" standardDeviationMicrosecondsPerInvocation="2177"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StreamResourceTracker" totalMilliseconds="171" invocations="105" avgMicrosecondsPerInvocation="1631" maxMicrosecondsPerInvocation="3757" standardDeviationMicrosecondsPerInvocation="718"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="160" invocations="153" avgMicrosecondsPerInvocation="1048" maxMicrosecondsPerInvocation="112640" standardDeviationMicrosecondsPerInvocation="9063"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="150" invocations="68" avgMicrosecondsPerInvocation="2207" maxMicrosecondsPerInvocation="40884" standardDeviationMicrosecondsPerInvocation="5907"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="136" invocations="114" avgMicrosecondsPerInvocation="1199" maxMicrosecondsPerInvocation="11890" standardDeviationMicrosecondsPerInvocation="1879"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="131" invocations="68" avgMicrosecondsPerInvocation="1935" maxMicrosecondsPerInvocation="46478" standardDeviationMicrosecondsPerInvocation="6103"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="114" invocations="240" avgMicrosecondsPerInvocation="477" maxMicrosecondsPerInvocation="9198" standardDeviationMicrosecondsPerInvocation="1124"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="92" invocations="427" avgMicrosecondsPerInvocation="216" maxMicrosecondsPerInvocation="4936" standardDeviationMicrosecondsPerInvocation="425"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="90" invocations="463" avgMicrosecondsPerInvocation="195" maxMicrosecondsPerInvocation="1106" standardDeviationMicrosecondsPerInvocation="99"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="88" invocations="102" avgMicrosecondsPerInvocation="868" maxMicrosecondsPerInvocation="50321" standardDeviationMicrosecondsPerInvocation="4972"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.obl.ObligationAnalysis" totalMilliseconds="87" invocations="62" avgMicrosecondsPerInvocation="1415" maxMicrosecondsPerInvocation="7228" standardDeviationMicrosecondsPerInvocation="1557"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="86" invocations="35" avgMicrosecondsPerInvocation="2482" maxMicrosecondsPerInvocation="17120" standardDeviationMicrosecondsPerInvocation="4558"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DefaultEncodingDetector" totalMilliseconds="70" invocations="35" avgMicrosecondsPerInvocation="2007" maxMicrosecondsPerInvocation="49331" standardDeviationMicrosecondsPerInvocation="8188"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="62" invocations="68" avgMicrosecondsPerInvocation="913" maxMicrosecondsPerInvocation="11923" standardDeviationMicrosecondsPerInvocation="2273"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="48" invocations="142" avgMicrosecondsPerInvocation="342" maxMicrosecondsPerInvocation="3289" standardDeviationMicrosecondsPerInvocation="534"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="47" invocations="35" avgMicrosecondsPerInvocation="1354" maxMicrosecondsPerInvocation="6629" standardDeviationMicrosecondsPerInvocation="1883"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="44" invocations="35" avgMicrosecondsPerInvocation="1268" maxMicrosecondsPerInvocation="21996" standardDeviationMicrosecondsPerInvocation="3662"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="41" invocations="35" avgMicrosecondsPerInvocation="1199" maxMicrosecondsPerInvocation="24518" standardDeviationMicrosecondsPerInvocation="4551"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="41" invocations="68" avgMicrosecondsPerInvocation="615" maxMicrosecondsPerInvocation="5387" standardDeviationMicrosecondsPerInvocation="1193"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="40" invocations="68" avgMicrosecondsPerInvocation="592" maxMicrosecondsPerInvocation="8524" standardDeviationMicrosecondsPerInvocation="1445"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="39" invocations="68" avgMicrosecondsPerInvocation="583" maxMicrosecondsPerInvocation="9727" standardDeviationMicrosecondsPerInvocation="1480"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="39" invocations="35" avgMicrosecondsPerInvocation="1121" maxMicrosecondsPerInvocation="5818" standardDeviationMicrosecondsPerInvocation="1200"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
