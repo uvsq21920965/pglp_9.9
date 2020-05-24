@@ -1,11 +1,12 @@
 package drawing;
 
-import shape.Shape;
-
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import commande.*;
+import dao.Dao;
 import shape.*;
 
 
@@ -29,10 +30,14 @@ public class DrawingTui {
   /**
    * constructeur.
    */
-  public DrawingTui() { 
+  public DrawingTui() {
     formes = new ArrayList<Shape>();
     groupes = new ArrayList<GroupShapes>();
-    
+    this.deleteTables("cercles");
+    this.deleteTables("carres");
+    this.deleteTables("rectangles");
+    this.deleteTables("triangles");
+    this.deleteTables("groupshapes");
   }
 
   /**
@@ -137,14 +142,26 @@ public class DrawingTui {
   }
 
   /**
-   * méthode pour charger un dessin.
-   *@return commandeLoad.
+   * méthode pour charger un dessin à partir du BD.
+   * @param  groupe  le groupe à charger.
+   * @return commandeLoad.
    */
-  public Command loadGroups(String nameGroupe) {
-    CommandLoad cl= new CommandLoad(nameGroupe);
+  public Command loadGroups(GroupShapes groupe) {
+   
+    for(Ishape shape : groupe.getShapes()) {
+      if(shape instanceof Shape && groupe.getIdG() == ((Shape) shape).getGroupId()){
+        formes.remove((Shape)shape);
+      }
+    }
+    groupes.remove(groupe);
+    CommandLoad cl= new CommandLoad(String.valueOf(groupe.getIdG()));
     GroupShapes gs = cl.execute();
-    groupes.clear();
-    formes.add((Shape)gs.getShapes());
+    groupes.add(gs);
+    for(Ishape shape : gs.getShapes()) {
+        if(shape instanceof Shape) {
+          formes.add((Shape)shape);
+        }
+      }
     return cl;
   }
 
@@ -202,13 +219,13 @@ public class DrawingTui {
         case "save":
           GroupShapes shapeG2 = findGroup(textUser[1]);
           command = saveGroups(shapeG2);
-          System.out.println(command.equals(null));
           System.out.println("votre dessin a éte sauvgardé");
+          break;
         case "load":
-          String shapeG3 = textUser[1];
+          GroupShapes shapeG3 = findGroup(textUser[1]);
           command = loadGroups(shapeG3);
-          System.out.println(command.equals(null));
           System.out.println("votre dessin a éte chargé");
+          break;
         case "exit":
     	  command = new CommandExit();
     	  ((ICommand)command).execute();
@@ -255,11 +272,12 @@ public class DrawingTui {
     	      CreateGroupe(groupId,(Rectangle)shape);
     	      break;
             default:
+              System.out.println("forme invalide");
+              command = null;
               break;
           }
       }
     } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
-      System.out.println("votre description de dessin est erronée.");
       return null;
     }
     return command;
@@ -271,18 +289,17 @@ public class DrawingTui {
    * @return le dessin textuel.
    */
   public String afficheDessin(Shape shape) {
-
-    if(shape instanceof Carre) {
-      return ((Carre)shape).Affiche();
-    }
-
     if(shape instanceof Cercle) {
       return ((Cercle)shape).Affiche();
     }
 
     if(shape instanceof Rectangle) {
-      return ((Rectangle)shape).Affiche();
-    }
+      if(((Rectangle) shape).getLength() == ((Rectangle) shape).getWidth()) {
+        return((Carre)shape).Affiche();  
+      } else {
+        return((Rectangle)shape).Affiche();
+      }
+  	}
 
     if(shape instanceof Triangle) {
       return ((Triangle)shape).Affiche();
@@ -304,5 +321,20 @@ public class DrawingTui {
       affiche.append("\n");
     }
     return affiche+"";
+  }
+
+  /**
+   * méthode pour supprimer la table dand base de données à chaque utilisation.
+   * @param nameTble le nom de la table à supprimer.
+   */
+  public void deleteTables(String nameTable) {
+    Connection connexion = Dao.getConnection();
+    String deleteTableString = "delete from "+nameTable;
+    try {
+      connexion.createStatement().execute(deleteTableString);
+      connexion.close();
+    } catch (SQLException e1) {
+      e1.printStackTrace();
+	} 
   }
 }

@@ -115,6 +115,6 @@ public class GroupShapes extends Shape implements Ishape {
       affiche.append(" ");
       affiche.append(shape.Affiche());
 	}
-    return this.getNameG()+"Groupe :" +" " + affiche;
+    return " Groupe " +this.getNameG()+": " + affiche;
   }
 }

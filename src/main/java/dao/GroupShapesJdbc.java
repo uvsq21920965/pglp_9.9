@@ -73,10 +73,11 @@ public class GroupShapesJdbc implements Dao<GroupShapes> {
 	  for (Ishape p: obj.getShapes()) {
         if (!(p instanceof GroupShapes)) {
           if (p instanceof Rectangle) {
-            rj.create((Rectangle) p);
-          }
-          if (p instanceof Carre) {
-            caj.create((Carre) p);
+            if(((Rectangle) p).getLength() == ((Rectangle) p).getWidth()) {
+            	caj.create((Carre) p);
+            } else {
+              rj.create((Rectangle) p);
+            }
           }
           if (p instanceof Cercle) {
             cj.create((Cercle) p);
@@ -236,10 +237,11 @@ public class GroupShapesJdbc implements Dao<GroupShapes> {
       TriangleJdbc trj = new TriangleJdbc();
       for (Ishape p: obj.getShapes()) {
         if (p instanceof Rectangle) {
-          rj.delete((Rectangle) p);
-        }
-        if (p instanceof Carre) {
-          caj.create((Carre) p);
+          if(((Rectangle) p).getLength() == ((Rectangle) p).getWidth()) {
+            caj.create((Carre) p);
+          } else {
+            rj.create((Rectangle) p);
+          }
         }
         if (p instanceof Cercle) {
           cj.create((Cercle) p);

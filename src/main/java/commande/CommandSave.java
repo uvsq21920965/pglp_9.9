@@ -20,7 +20,7 @@ public class CommandSave implements ICommand {
   private GroupShapesJdbc gsj;
   /**
    * Constructeur.
-   * @param gsAtt la groupe à sauvgarder.
+   * @param gsAtt la groupe à sauvegarder.
    */
   public CommandSave(GroupShapes gsAtt) {
     this.gs = gsAtt;

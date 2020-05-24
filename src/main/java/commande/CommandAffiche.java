@@ -30,16 +30,16 @@ public class CommandAffiche implements ICommandAffiche {
    */
   @Override
   public String execute() {
-    if(shape instanceof Carre) {
-      return((Carre)shape).Affiche();
-	}
-
     if(shape instanceof Cercle) {
 	  return((Cercle)shape).Affiche();
 	}
 
     if(shape instanceof Rectangle) {
+      if(((Rectangle) shape).getLength() == ((Rectangle) shape).getWidth()) {
+    	  return((Carre)shape).Affiche();  
+      } else {
       return((Rectangle)shape).Affiche();
+      }
 	}
 
     if(shape instanceof Triangle) {

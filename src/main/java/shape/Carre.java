@@ -35,7 +35,7 @@ public class Carre extends Rectangle {
   public String Affiche() {
 	Point point = this.getLeftTop();
     return this.getName()+" = Carre( point de reférence("+point.getX()+","
-	    +point.getY()+"),cote="+this.getSide()+")";
+	    +point.getY()+"),coté = "+this.getSide()+")";
   }
 
 }

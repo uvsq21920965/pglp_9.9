@@ -22,7 +22,7 @@ public class CommandeAfficheGroupTest {
 	  gs.add(r1);
 	  mg = new CommandAfficheGroup(gs);
     String affiche = mg.execute();
-    String affichePredict = "g1Groupe :  c1 = Cercle((centre(5.2,7.0),rayon=5.0) re1 = Rectangle(point de reférence(5.2,7.0),longueur=4.0, largeur=3.5)";
+    String affichePredict = " Groupe g1:  c1 = Cercle((centre(5.2,7.0),rayon=5.0) re1 = Rectangle(point de reférence(5.2,7.0),longueur=4.0, largeur=3.5)";
     assertEquals(affiche,affichePredict);
   }
 }
